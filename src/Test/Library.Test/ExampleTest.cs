@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Test.Library
+namespace Library
 {
     public class ExampleTest
     {
