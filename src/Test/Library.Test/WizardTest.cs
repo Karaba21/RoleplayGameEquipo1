@@ -75,7 +75,7 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }
         [Test]
-        public void UseMagicClubTest1()
+        public void UseMagicClubTest1() // damage = 90
         {
             // Testeo que funcione al ataque con el Bastón Mágico
             double expected = 915;
@@ -84,7 +84,7 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(otherwizard.health));
         }
         [Test]
-        public void UseMagicClubTest2()
+        public void UseMagicClubTest2() // damage = 90
         {
             // Testeo que funcione el ataque con otros personajes con distintos valores de defensa
             double expected = 950;
