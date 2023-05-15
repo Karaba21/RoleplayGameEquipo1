@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-
 namespace Library
 {
-    public class MagicClub : IItems
+    public class FireBalls : IItems
     {
         public double damage { get ; set ;}
         public double defense { get ; set ;}
-        public MagicClub()
+        public FireBalls()
         {
-            this.damage = 90;
+            this.damage = 85;
             this.defense = 5;
         }
     }

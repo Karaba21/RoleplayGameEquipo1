@@ -1,16 +1,13 @@
-using System;
-using System.Collections.Generic;
-
 namespace Library
 {
-    public class MagicClub : IItems
+    public class Scythe : IItems
     {
         public double damage { get ; set ;}
         public double defense { get ; set ;}
-        public MagicClub()
+        public Scythe()
         {
             this.damage = 90;
-            this.defense = 5;
+            this.defense = 15;
         }
     }
 }
