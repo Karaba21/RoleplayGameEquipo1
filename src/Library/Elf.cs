@@ -10,14 +10,14 @@ namespace Library
         public FireBalls fireballs { get ; set ;}
         public WhirlWind whirlwind { get ; set ;}
         public Shield shield { get ; set ;}
-        public double totaldamage
+        public double totaldamage // = 175
         {
             get
             {
                 return this.fireballs.damage + this.whirlwind.damage + this.shield.damage;
             }
         }
-        public double totaldefense
+        public double totaldefense // = 70
         {
             get
             {

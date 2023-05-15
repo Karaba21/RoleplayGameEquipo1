@@ -6,7 +6,7 @@ namespace Library
         public double defense { get ; set ;}
         public WhirlWind()
         {
-            this.damage = 85;
+            this.damage = 90;
             this.defense = 0;
         }
     }

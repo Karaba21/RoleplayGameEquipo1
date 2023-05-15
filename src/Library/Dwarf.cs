@@ -10,14 +10,14 @@ namespace Library
         public Crossbow crossbow { get ; set ;}
         public Daggers daggers { get ; set ;}
         public Scythe scythe { get ; set ;}
-        public double totaldamage
+        public double totaldamage // = 240
         {
             get
             {
                 return this.crossbow.damage + this.daggers.damage + this.scythe.damage;
             }
         }
-        public double totaldefense
+        public double totaldefense // = 40
         {
             get
             {
@@ -96,9 +96,9 @@ namespace Library
             this.daggers.damage = this.daggers.damage * 2;
             this.scythe.damage = this.scythe.damage * 2;
 
-            this.crossbow.defense = this.crossbow.defense * 0.8;
-            this.daggers.defense = this.daggers.defense * 0.8;
-            this.scythe.defense = this.scythe.defense * 0.8;
+            this.crossbow.defense = this.crossbow.defense * 0.5;
+            this.daggers.defense = this.daggers.defense * 0.5;
+            this.scythe.defense = this.scythe.defense * 0.5;
         }
         public void DeactivateDynamite()
         {
@@ -106,9 +106,9 @@ namespace Library
             this.daggers.damage = this.daggers.damage / 2;
             this.scythe.damage = this.scythe.damage / 2;
 
-            this.crossbow.defense = this.crossbow.defense / 0.8;
-            this.daggers.defense = this.daggers.defense / 0.8;
-            this.scythe.defense = this.scythe.defense / 0.8;
+            this.crossbow.defense = this.crossbow.defense / 0.5;
+            this.daggers.defense = this.daggers.defense / 0.5;
+            this.scythe.defense = this.scythe.defense / 0.5;
         }
     }
 }

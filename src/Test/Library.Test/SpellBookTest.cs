@@ -2,7 +2,7 @@ using System;
 using Library;
 using System.Collections.Generic;
 using NUnit.Framework;
-/*
+
 namespace Library.Test
 {
     public class SpellBookTest
@@ -71,7 +71,7 @@ namespace Library.Test
         public void MultipleSpellsDamageTest()
         {
             // Testeo que el damage del libro aumenta con la cantidad de hechizos
-            double expected = 15 * 3;
+            double expected = 45;
             spellbook.AddSpell(spell1);
             spellbook.AddSpell(spell2);
             spellbook.AddSpell(spell3);
@@ -81,8 +81,8 @@ namespace Library.Test
         [Test]
         public void MultipleSpellsDefenseTest()
         {
-            // Testeo que el damage del libro aumenta con la cantidad de hechizos
-            double expected = 15 * 3;
+            // Testeo que el defense del libro aumenta con la cantidad de hechizos
+            double expected = 15;
             spellbook.AddSpell(spell1);
             spellbook.AddSpell(spell2);
             spellbook.AddSpell(spell3);
@@ -91,4 +91,3 @@ namespace Library.Test
         }
     }
 }
-*/

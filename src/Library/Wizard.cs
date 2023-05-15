@@ -9,7 +9,7 @@ namespace Library
         public double health { get ; set ;}
         public SpellBook spellbook { get ; set ;}
         public MagicClub magicclub { get ; set ;}
-        public double totaldamage
+        public double totaldamage // = 90 + (#spells * 15) + spellsdamage
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Library
                 return totaldamage;
             }
         }
-        public double totaldefense
+        public double totaldefense // = 5 + (#spells * 5) + spellsdefense
         {
             get
             {
