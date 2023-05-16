@@ -6,3 +6,4 @@ namespace Library
         double defense {get;set;}
     }
 }
+// no esta en uso

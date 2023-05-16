@@ -11,3 +11,4 @@ namespace Library
         void UseAllStrength(ICharacter character);
     }
 }
+// no esta en uso

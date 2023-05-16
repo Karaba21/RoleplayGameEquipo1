@@ -3,11 +3,9 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class SpellBook : IItems
+    public class SpellBook : Items
     {
         public List<Spell> spells {get ; set ;}
-        public double damage { get ; set ;}
-        public double defense { get ; set ;}
         public SpellBook()
         {
             List<Spell> spells = new List<Spell>();

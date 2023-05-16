@@ -1,9 +1,7 @@
 namespace Library
 {
-    public class FireBalls : IItems
+    public class FireBalls : Items
     {
-        public double damage { get ; set ;}
-        public double defense { get ; set ;}
         public FireBalls()
         {
             this.damage = 85;

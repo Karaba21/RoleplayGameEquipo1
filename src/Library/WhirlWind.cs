@@ -1,9 +1,7 @@
 namespace Library
 {
-    public class WhirlWind : IItems
+    public class WhirlWind : Items
     {
-        public double damage { get ; set ;}
-        public double defense { get ; set ;}
         public WhirlWind()
         {
             this.damage = 90;

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class MagicClub : IItems
+    public class MagicClub : Items
     {
-        public double damage { get ; set ;}
-        public double defense { get ; set ;}
         public MagicClub()
         {
             this.damage = 90;

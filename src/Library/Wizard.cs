@@ -3,13 +3,11 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Wizard : ICharacter
+    public class Wizard : Character
     {
-        public string name { get ; set ;}
-        public double health { get ; set ;}
-        public SpellBook spellbook { get ; set ;}
+        public SpellBook spellbook { get ; set ;} // podria llamarlos elemento 1 2 3 y generalizar el metodo
         public MagicClub magicclub { get ; set ;}
-        public double totaldamage // = 90 + (#spells * 15) + spellsdamage
+        public override double totaldamage // = 90 + (#spells * 15) + spellsdamage
         {
             get
             {
@@ -23,7 +21,7 @@ namespace Library
                 return totaldamage;
             }
         }
-        public double totaldefense // = 5 + (#spells * 5) + spellsdefense
+        public override double totaldefense // = 5 + (#spells * 5) + spellsdefense
         {
             get
             {
@@ -49,19 +47,7 @@ namespace Library
             this.spellbook = spellbook;
             this.magicclub = magicclub;
         }
-        public void Heal(double medicine)
-        {
-            this.health = this.health + medicine;
-            if (this.health > 1000)
-            {
-                this.health = 1000;
-            }
-        }
-        public void RestoreHealth()
-        {
-            this.health = 1000;
-        }
-        public void UseMagicClub(ICharacter character)
+        public void UseMagicClub(Character character)
         {
             if (character != this)
             {
@@ -71,7 +57,7 @@ namespace Library
                 }
             }
         }
-        public void UseSpell(Spell spell, ICharacter character)
+        public void UseSpell(Spell spell, Character character)
         {
             if (character != this)
             {
@@ -81,16 +67,6 @@ namespace Library
                     {
                     character.health = character.health + character.totaldefense - spell.damage - this.spellbook.damage;
                     }
-                }
-            }
-        }
-        public void UseAllStrength(ICharacter character)
-        {
-            if (character != this)
-            {
-                if (character.totaldefense < this.totaldamage)
-                {
-                    character.health = character.health + character.totaldefense - this.totaldamage;
                 }
             }
         }

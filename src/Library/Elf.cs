@@ -3,21 +3,19 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Elf : ICharacter
+    public class Elf : Character
     {
-        public string name { get ; set ;}
-        public double health { get ; set ;}
         public FireBalls fireballs { get ; set ;}
         public WhirlWind whirlwind { get ; set ;}
         public Shield shield { get ; set ;}
-        public double totaldamage // = 175
+        public override double totaldamage // = 175
         {
             get
             {
                 return this.fireballs.damage + this.whirlwind.damage + this.shield.damage;
             }
         }
-        public double totaldefense // = 70
+        public override double totaldefense // = 70
         {
             get
             {
@@ -38,19 +36,7 @@ namespace Library
             this.whirlwind = whirlwind;
             this.shield = shield;
         }
-        public void Heal(double medicine)
-        {
-            this.health = this.health + medicine;
-            if (this.health > 1000)
-            {
-                this.health = 1000;
-            }
-        }
-        public void RestoreHealth()
-        {
-            this.health = 1000;
-        }
-        public void UseFireBalls(ICharacter character)
+        public void UseFireBalls(Character character)
         {
             if (character != this)
             {
@@ -60,7 +46,7 @@ namespace Library
                 }
             }
         }
-        public void UseWhirlWind(ICharacter character)
+        public void UseWhirlWind(Character character)
         {
             if (character != this)
             {
@@ -70,17 +56,7 @@ namespace Library
                 }
             }
         }
-        public void UseAllStrength(ICharacter character)
-        {
-            if (character != this)
-            {
-                if (character.totaldefense < this.totaldamage)
-                {
-                    character.health = character.health + character.totaldefense - this.totaldamage;
-                }
-            }
-        }
-        public void HealOther(ICharacter character, double medicine)
+        public void HealOther(Character character, double medicine)
         {
             if (character != this)
             {
