@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace Library.Test
 {
     public class WizardTest
-    // En esta clase hay 11 tests.
+    // En esta clase hay 14 tests.
     {
         private Wizard mywizard;
         private Wizard otherwizard;
@@ -26,9 +26,9 @@ namespace Library.Test
             spell2 = new Spell("golpe", 20, 0);
             spell3 = new Spell("escudo", 0, 30);
 
-            mywizard.spellbook.AddSpell(spell1);
-            mywizard.spellbook.AddSpell(spell2);
-            mywizard.spellbook.AddSpell(spell3);
+            mywizard.item1.AddSpell(spell1);
+            mywizard.item1.AddSpell(spell2);
+            mywizard.item1.AddSpell(spell3);
         }
         [Test]
         public void GetTotalDamageTest()
@@ -42,7 +42,7 @@ namespace Library.Test
         public void GetTotalDefenseTest()
         {
             // Verifico que la cuenta de totaldefense funcione
-            double expected = 50;
+            double expected = 90;
 
             Assert.That(expected, Is.EqualTo(mywizard.totaldefense));
         }
@@ -50,7 +50,7 @@ namespace Library.Test
         public void UseSpellTest1()
         {
             // Testeo que funcione el uso del hechizo
-            double expected = 910;
+            double expected = 950;
             mywizard.UseSpell(spell1, otherwizard);
 
             Assert.That(expected, Is.EqualTo(otherwizard.health));
@@ -78,7 +78,7 @@ namespace Library.Test
         public void UseMagicClubTest1() // damage = 90
         {
             // Testeo que funcione al ataque con el Bastón Mágico
-            double expected = 915;
+            double expected = 955;
             mywizard.UseMagicClub(otherwizard);
 
             Assert.That(expected, Is.EqualTo(otherwizard.health));
@@ -96,7 +96,7 @@ namespace Library.Test
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
-            double expected = 895;
+            double expected = 975;
             mywizard.UseMagicClub(otherwizard);
             mywizard.UseSpell(spell1, otherwizard);
             otherwizard.Heal(70);
@@ -134,6 +134,36 @@ namespace Library.Test
             mywizard.UseAllStrength(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
+        }
+        [Test]
+        public void AddItemTest()
+        {
+            // Testeo que se le puedan otorgar elementos a un personaje
+            bool expected = true;
+            Shield shield = new Shield();
+            mywizard.AddItem(shield);
+
+            Assert.That(expected, Is.EqualTo(mywizard.items.Contains(shield)));
+        }
+        [Test]
+        public void RemoveItemTest1()
+        {
+            // Testeo que se le puedan quitar elementos a un personaje
+            bool expected = false;
+            Scythe scythe = new Scythe();
+            mywizard.AddItem(scythe);
+            mywizard.RemoveItem(scythe);
+
+            Assert.That(expected, Is.EqualTo(mywizard.items.Contains(scythe)));
+        }
+        [Test]
+        public void RemoveItemTest2()
+        {
+            // Testeo que no se le puedan quitar los elementos iniciales a un personaje
+            bool expected = true;
+            mywizard.RemoveItem(mywizard.item2);
+
+            Assert.That(expected, Is.EqualTo(mywizard.items.Contains(mywizard.item2)));
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Library
 {
     public class Items
     {
-        public double damage { get ; set ;}
-        public double defense { get ; set ;}
+        public virtual double damage { get ; set ;}
+        public virtual double defense { get ; set ;}
     }
 }

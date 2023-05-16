@@ -12,7 +12,6 @@ namespace Library.Test
         private Dwarf dwarf;
         private Dwarf otherdwarf;
         private Elf elf;
-        private Spell spell;
         [SetUp]
         public void SetUp()
         {
@@ -20,9 +19,6 @@ namespace Library.Test
             dwarf = new Dwarf("Grumpy"); // defense = 40
             otherdwarf = new Dwarf("Dopey"); // defense = 40
             elf = new Elf("Sombrio"); // defense = 70
-            spell = new Spell("escudo", 0, 40);
-
-            wizard.spellbook.AddSpell(spell);
         }
         [Test]
         public void GetTotalDamageTest()
@@ -44,7 +40,7 @@ namespace Library.Test
         public void UseCrossbowTest1() // damage = 80
         {
             // Testeo que funcione el ataque con Ballesta
-            double expected = 970;
+            double expected = 965;
             dwarf.UseCrossbow(wizard);
 
             Assert.That(expected, Is.EqualTo(wizard.health));
@@ -71,7 +67,7 @@ namespace Library.Test
         public void UseDaggersTest2() // damage = 70
         {
             // Testeo que funcione el ataque con Dagas en personajes con valores de defensa distintos
-            double expected = 980;
+            double expected = 975;
             dwarf.UseDaggers(wizard);
 
             Assert.That(expected, Is.EqualTo(wizard.health));

@@ -12,7 +12,6 @@ namespace Library.Test
         private Dwarf dwarf;
         private Elf elf;
         private Elf otherelf;
-        private Spell spell;
         [SetUp]
         public void SetUp()
         {
@@ -20,9 +19,6 @@ namespace Library.Test
             dwarf = new Dwarf("Grumpy"); // defense = 40
             elf = new Elf("Sombrio"); // defense = 70
             otherelf = new Elf("Dobby"); // defense = 70
-            spell = new Spell("escudo", 0, 40);
-
-            wizard.spellbook.AddSpell(spell);
         }
         [Test]
         public void GetTotalDamageTest()
@@ -62,7 +58,7 @@ namespace Library.Test
         public void UseWhirlWindTest1() // damage = 90
         {
             // Testeo que funcione al ataque con Tornado
-            double expected = 960;
+            double expected = 955;
             elf.UseWhirlWind(wizard);
 
             Assert.That(expected, Is.EqualTo(wizard.health));
@@ -116,10 +112,10 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(elf.health));
         }
         [Test]
-        public void UseAllStrengthTest()
+        public void UseAllStrengthTest() // damage = 175
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 875;
+            double expected = 870;
             elf.UseAllStrength(wizard);
 
             Assert.That(expected, Is.EqualTo(wizard.health));
@@ -128,7 +124,7 @@ namespace Library.Test
         public void HealOtherTest1()
         {
             // Testeo que funcione la curación a otro personaje
-            double expected = 975;
+            double expected = 970;
             elf.UseFireBalls(wizard);
             elf.HealOther(wizard, 10);
 

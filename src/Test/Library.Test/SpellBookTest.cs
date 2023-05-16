@@ -33,7 +33,7 @@ namespace Library.Test
         public void AddSpellTest2()
         {
             // Testeo si funciona el aumento del damage del libro al agregar un hechizo
-            double expected = 15;
+            double expected = 55;
             spellbook.AddSpell(spell1);
 
             Assert.That(expected, Is.EqualTo(spellbook.damage));
@@ -71,7 +71,7 @@ namespace Library.Test
         public void MultipleSpellsDamageTest()
         {
             // Testeo que el damage del libro aumenta con la cantidad de hechizos
-            double expected = 45;
+            double expected = 105;
             spellbook.AddSpell(spell1);
             spellbook.AddSpell(spell2);
             spellbook.AddSpell(spell3);
@@ -82,7 +82,7 @@ namespace Library.Test
         public void MultipleSpellsDefenseTest()
         {
             // Testeo que el defense del libro aumenta con la cantidad de hechizos
-            double expected = 15;
+            double expected = 65;
             spellbook.AddSpell(spell1);
             spellbook.AddSpell(spell2);
             spellbook.AddSpell(spell3);
