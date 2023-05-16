@@ -8,7 +8,7 @@ namespace Library
         // string name
         // double health
         // List<Items> items
-        public override SpellBook item1 { get ;} // podria llamarlos elemento 1 2 3 y generalizar el metodo
+        public override SpellBook item1 { get ;}
         public override MagicClub item2 { get ;}
         public override MagicHat item3 { get ;}
         // double totaldamage = 90 + (#spells * 15) + spellsdamage
