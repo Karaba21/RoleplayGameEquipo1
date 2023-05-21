@@ -7,18 +7,16 @@ namespace Library.Test
 {
     public class DwarfTest
     {
-        // En esta clase hay 16 tests.
-        private Wizard wizard;
+        // En esta clase hay X tests.
         private Dwarf dwarf;
         private Dwarf otherdwarf;
-        private Elf elf;
+        private DarkWizard darkwizard;
         [SetUp]
         public void SetUp()
         {
-            wizard = new Wizard("Merlin"); // defense = 50
             dwarf = new Dwarf("Grumpy"); // defense = 40
             otherdwarf = new Dwarf("Dopey"); // defense = 40
-            elf = new Elf("Sombrio"); // defense = 70
+            darkwizard = new DarkWizard("Cora"); // defense = 40
         }
         [Test]
         public void GetTotalDamageTest()
@@ -37,66 +35,39 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(dwarf.totaldefense));
         }
         [Test]
-        public void UseCrossbowTest1() // damage = 80
+        public void UseCrossbowTest() // damage = 80
         {
             // Testeo que funcione el ataque con Ballesta
-            double expected = 965;
-            dwarf.UseCrossbow(wizard);
-
-            Assert.That(expected, Is.EqualTo(wizard.health));
-        }
-        [Test]
-        public void UseCrossbowTest2() // damage = 80
-        {
-            // Testeo que funcione el ataque con Ballesta en personajes con valores de defensa distintos
             double expected = 960;
-            dwarf.UseCrossbow(otherdwarf);
+            dwarf.UseCrossbow(darkwizard);
 
-            Assert.That(expected, Is.EqualTo(otherdwarf.health));
+            Assert.That(expected, Is.EqualTo(darkwizard.health));
         }
         [Test]
-        public void UseDaggersTest1() // damage = 70
+        public void UseDaggersTest() // damage = 70
         {
             // Testeo que funcione el ataque con Dagas
-            double expected = 1000;
-            dwarf.UseDaggers(elf);
+            double expected = 970;
+            dwarf.UseDaggers(darkwizard);
 
-            Assert.That(expected, Is.EqualTo(elf.health));
+            Assert.That(expected, Is.EqualTo(darkwizard.health));
         }
         [Test]
-        public void UseDaggersTest2() // damage = 70
-        {
-            // Testeo que funcione el ataque con Dagas en personajes con valores de defensa distintos
-            double expected = 975;
-            dwarf.UseDaggers(wizard);
-
-            Assert.That(expected, Is.EqualTo(wizard.health));
-        }
-        [Test]
-        public void UseScytheTest1() // damage = 90
+        public void UseScytheTest() // damage = 90
         {
             // Testeo que funcione el ataque con Guadaña
-            double expected = 980;
-            dwarf.UseScythe(elf);
-
-            Assert.That(expected, Is.EqualTo(elf.health));
-        }
-        [Test]
-        public void UseScytheTest2() // damage = 90
-        {
-            // Testeo que funcione el ataque con Guadaña en personajes con valores de defensa distintos
             double expected = 950;
-            dwarf.UseScythe(otherdwarf);
+            dwarf.UseScythe(darkwizard);
 
-            Assert.That(expected, Is.EqualTo(otherdwarf.health));
+            Assert.That(expected, Is.EqualTo(darkwizard.health));
         }
         [Test]
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
             double expected = 950;
-            otherdwarf.UseCrossbow(dwarf);
-            otherdwarf.UseScythe(dwarf);
+            otherdwarf.UseCrossbow(dwarf); // health = 960
+            otherdwarf.UseScythe(dwarf); // health = 910
             dwarf.Heal(40);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -106,7 +77,7 @@ namespace Library.Test
         {
             // Testeo que la vida no se pase del valor máximo, que es 1000
             double expected = 1000;
-            otherdwarf.UseCrossbow(dwarf);
+            otherdwarf.UseScythe(dwarf);
             otherdwarf.UseDaggers(dwarf);
             dwarf.Heal(400);
 
@@ -117,21 +88,21 @@ namespace Library.Test
         {
             // Testeo que funcione el método RestoreHealth()
             double expected = 1000;
-            dwarf.UseScythe(otherdwarf);
-            dwarf.UseCrossbow(otherdwarf);
-            dwarf.UseDaggers(otherdwarf);
-            otherdwarf.RestoreHealth();
+            otherdwarf.UseScythe(dwarf);
+            otherdwarf.UseCrossbow(dwarf);
+            otherdwarf.UseDaggers(dwarf);
+            dwarf.RestoreHealth();
 
-            Assert.That(expected, Is.EqualTo(otherdwarf.health));
+            Assert.That(expected, Is.EqualTo(dwarf.health));
         }
         [Test]
         public void UseAllStrengthTest()
         {
             // Testeo que funcione el método UseAllStrength()
             double expected = 800;
-            dwarf.UseAllStrength(otherdwarf);
+            dwarf.UseAllStrength(darkwizard);
 
-            Assert.That(expected, Is.EqualTo(otherdwarf.health));
+            Assert.That(expected, Is.EqualTo(darkwizard.health));
         }
         [Test]
         public void ActivateDynamiteTest1()

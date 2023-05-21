@@ -14,7 +14,7 @@ public class DarkWizard : Enemies
         FireBalls fireball= new FireBalls();
         Scythe scythe=new Scythe();
         this.name = name;
-        this.health = 950;
+        this.health = 1000;
         this.item1 = daggers;
         this.item2 = fireball;
         this.item3 = scythe;
