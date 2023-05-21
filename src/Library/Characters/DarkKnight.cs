@@ -25,25 +25,25 @@ namespace Library
             this.items.Add(this.item2);
             this.items.Add(this.item3);
         }
-        public void UseSword(Enemies enemy) // item1
+        public void UseSword(Heroes hero) // item1
         {
-            if (enemy.totaldefense < this.item1.damage)
+            if (hero.totaldefense < this.item1.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totaldefense - this.item1.damage;
             }
         }
-        public void UseArmor(Enemies enemy) // item2
+        public void UseArmor(Heroes hero) // item2
         {
-            if (enemy.totaldefense < this.item2.damage)
+            if (hero.totaldefense < this.item2.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
+                hero.health = hero.health + hero.totaldefense - this.item2.damage;
             }
         }
-        public void UseFlail(Enemies enemy) // item3
+        public void UseFlail(Heroes hero) // item3
         {
-            if (enemy.totaldefense < this.item3.damage)
+            if (hero.totaldefense < this.item3.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
+                hero.health = hero.health + hero.totaldefense - this.item3.damage;
             }
         }
     }

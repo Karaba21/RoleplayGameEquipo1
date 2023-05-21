@@ -24,25 +24,25 @@ public class DarkWizard : Enemies
         this.items.Add(this.item3);
         
     }
-    public void UseDaggers(Enemies enemy) // item1
+    public void UseDaggers(Heroes hero) // item1
         {
-            if (enemy.totaldefense < this.item1.damage)
+            if (hero.totaldefense < this.item1.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totaldefense - this.item1.damage;
             }
         }
-    public void UseFireBalls(Enemies enemy) // item2
+    public void UseFireBalls(Heroes hero) // item2
         {
-            if (enemy.totaldefense < this.item2.damage)
+            if (hero.totaldefense < this.item2.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
+                hero.health = hero.health + hero.totaldefense - this.item2.damage;
             }
         }
-    public void UseScythe(Enemies enemy) // item3
+    public void UseScythe(Heroes hero) // item3
     {
-        if (enemy.totaldefense < this.item3.damage)
+        if (hero.totaldefense < this.item3.damage)
         {
-            enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
+            hero.health = hero.health + hero.totaldefense - this.item3.damage;
         }
     }
 }
