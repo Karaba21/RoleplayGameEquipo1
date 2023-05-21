@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Dwarf : Character
+    public class Dwarf : Heroes
     {
         // string name
         // double health
@@ -26,6 +26,7 @@ namespace Library
             this.item1 = crossbow;
             this.item2 = daggers;
             this.item3 = scythe;
+            this.VP = 0;
 
             this.items.Add(this.item1);
             this.items.Add(this.item2);
@@ -34,6 +35,8 @@ namespace Library
         // public void Heal()
         // public void RestoreHealth()
         // public void UseAllStrength(Character character)
+        // public void AddItem(Items item)
+        // public void RemoveItem(Items item)
         public void UseDaggers(Character character) // item2
         {
             if (character != this)
