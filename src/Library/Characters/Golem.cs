@@ -27,25 +27,25 @@ namespace Library
             this.items.Add(this.item3);
         }
 
-        public void UseFists(Enemies enemy) //item1
+        public void UseFists(Heroes hero) //item1
         {
-            if (enemy.totaldefense < this.item1.damage)
+            if (hero.totaldefense < this.item1.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totaldefense - this.item1.damage;
             }
         }
-        public void UseGolemite(Enemies enemy) //item2
+        public void UseGolemite(Heroes hero) //item2
         {
-            if (enemy.totaldefense < this.item2.damage)
+            if (hero.totaldefense < this.item2.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
+                hero.health = hero.health + hero.totaldefense - this.item2.damage;
             }
         }
-        public void UseStones(Enemies enemy) //item3
+        public void UseStones(Heroes hero) //item3
         {
-            if (enemy.totaldefense < this.item3.damage)
+            if (hero.totaldefense < this.item3.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
+                hero.health = hero.health + hero.totaldefense - this.item3.damage;
             }
         }
     }
