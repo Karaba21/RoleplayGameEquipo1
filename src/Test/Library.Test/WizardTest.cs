@@ -6,23 +6,21 @@ using NUnit.Framework;
 namespace Library.Test
 {
     public class WizardTest
-    // En esta clase hay 14 tests.
     {
+        // En esta clase hay 12 tests.
         private Wizard mywizard;
         private Wizard otherwizard;
-        private Dwarf dwarf;
-        private Elf elf;
         private Spell spell1;
         private Spell spell2;
         private Spell spell3;
+        private Bomber bomber;
         [SetUp]
         public void SetUp()
         {
             mywizard = new Wizard("Merlin"); // defense = 50
             otherwizard = new Wizard("Houdini"); // defense = 5
-            dwarf = new Dwarf("Grumpy"); // defense = 40
-            elf = new Elf("Sombrio"); // defense = 70
-            spell1 = new Spell("ataque", 50, 0);
+            bomber = new Bomber("Bombastic"); // 80
+            spell1 = new Spell("ataque", 65, 0);
             spell2 = new Spell("golpe", 20, 0);
             spell3 = new Spell("escudo", 0, 30);
 
@@ -34,7 +32,7 @@ namespace Library.Test
         public void GetTotalDamageTest()
         {
             // Verifico que la cuenta de totaldamage funcione
-            double expected = 205;
+            double expected = 220;
 
             Assert.That(expected, Is.EqualTo(mywizard.totaldamage));
         }
@@ -50,90 +48,69 @@ namespace Library.Test
         public void UseSpellTest1()
         {
             // Testeo que funcione el uso del hechizo
-            double expected = 950;
-            mywizard.UseSpell(spell1, otherwizard);
+            double expected = 970;
+            mywizard.UseSpell(spell1, bomber);
 
-            Assert.That(expected, Is.EqualTo(otherwizard.health));
+            Assert.That(expected, Is.EqualTo(bomber.health));
         }  
         [Test]
         public void UseSpellTest2()
         {
             // Testeo que si el hechizo no esta en el libro de mywizard, otherwizard no pierda vida
-            Spell spell4 = new Spell("bomba", 70, 5);
+            Spell spell4 = new Spell("explosion", 70, 5);
             double expected = 1000;
-            mywizard.UseSpell(spell4, elf);
+            mywizard.UseSpell(spell4, bomber);
 
-            Assert.That(expected, Is.EqualTo(elf.health));
+            Assert.That(expected, Is.EqualTo(bomber.health));
         }
         [Test]
-        public void UseSpellTest3()
-        {
-            // Testeo que funcione el ataque con otros personajes con distintos valores de defensa
-            double expected = 945;
-            mywizard.UseSpell(spell1, dwarf);
-
-            Assert.That(expected, Is.EqualTo(dwarf.health));
-        }
-        [Test]
-        public void UseMagicClubTest1() // damage = 90
+        public void UseMagicClubTest() // damage = 90
         {
             // Testeo que funcione al ataque con el Bastón Mágico
-            double expected = 955;
-            mywizard.UseMagicClub(otherwizard);
+            double expected = 990;
+            mywizard.UseMagicClub(bomber);
 
-            Assert.That(expected, Is.EqualTo(otherwizard.health));
-        }
-        [Test]
-        public void UseMagicClubTest2() // damage = 90
-        {
-            // Testeo que funcione el ataque con otros personajes con distintos valores de defensa
-            double expected = 950;
-            mywizard.UseMagicClub(dwarf);
-
-            Assert.That(expected, Is.EqualTo(dwarf.health));
+            Assert.That(expected, Is.EqualTo(bomber.health));
         }
         [Test]
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
-            double expected = 975;
-            mywizard.UseMagicClub(otherwizard);
-            mywizard.UseSpell(spell1, otherwizard);
-            otherwizard.Heal(70);
+            double expected = 945;
+            bomber.UseAllStrength(mywizard);
+            mywizard.Heal(70);
 
-            Assert.That(expected, Is.EqualTo(otherwizard.health));
+            Assert.That(expected, Is.EqualTo(mywizard.health));
         }
         [Test]
         public void HealTest2()
         {
             // Testeo que la vida no se pase del valor máximo, que es 1000
             double expected = 1000;
-            mywizard.UseMagicClub(otherwizard);
-            mywizard.UseSpell(spell1, otherwizard);
-            otherwizard.Heal(300);
+            bomber.UseAllStrength(mywizard);
+            mywizard.Heal(300);
 
-            Assert.That(expected, Is.EqualTo(otherwizard.health));
+            Assert.That(expected, Is.EqualTo(mywizard.health));
         }
         [Test]
         public void RestoreHealthTest()
         {
             // Testeo que funcione el método RestoreHealth()
             double expected = 1000;
-            mywizard.UseSpell(spell1, otherwizard);
-            mywizard.UseSpell(spell2, otherwizard);
-            mywizard.UseMagicClub(otherwizard);
-            otherwizard.RestoreHealth();
+            bomber.UseAllStrength(mywizard);
+            bomber.UseAllStrength(mywizard);
+            mywizard.RestoreHealth();
 
-            Assert.That(expected, Is.EqualTo(otherwizard.health));
+            Assert.That(expected, Is.EqualTo(mywizard.health));
         }
         [Test]
         public void UseAllStrengthTest()
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 835;
-            mywizard.UseAllStrength(dwarf);
+            double expected = 860;
+            mywizard.UseAllStrength(bomber);
 
-            Assert.That(expected, Is.EqualTo(dwarf.health));
+            Assert.That(expected, Is.EqualTo(bomber.health));
         }
         [Test]
         public void AddItemTest()

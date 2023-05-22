@@ -7,7 +7,7 @@ namespace Library.Test
 {
     public class DwarfTest
     {
-        // En esta clase hay X tests.
+        // En esta clase hay 13 tests.
         private Dwarf dwarf;
         private Dwarf otherdwarf;
         private DarkWizard darkwizard;
@@ -65,9 +65,9 @@ namespace Library.Test
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
-            double expected = 950;
-            otherdwarf.UseCrossbow(dwarf); // health = 960
-            otherdwarf.UseScythe(dwarf); // health = 910
+            double expected = 945;
+            darkwizard.UseFireBalls(dwarf); // health = 955
+            darkwizard.UseScythe(dwarf); // health = 905
             dwarf.Heal(40);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -77,8 +77,8 @@ namespace Library.Test
         {
             // Testeo que la vida no se pase del valor máximo, que es 1000
             double expected = 1000;
-            otherdwarf.UseScythe(dwarf);
-            otherdwarf.UseDaggers(dwarf);
+            darkwizard.UseScythe(dwarf);
+            darkwizard.UseDaggers(dwarf);
             dwarf.Heal(400);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -88,9 +88,9 @@ namespace Library.Test
         {
             // Testeo que funcione el método RestoreHealth()
             double expected = 1000;
-            otherdwarf.UseScythe(dwarf);
-            otherdwarf.UseCrossbow(dwarf);
-            otherdwarf.UseDaggers(dwarf);
+            darkwizard.UseScythe(dwarf);
+            darkwizard.UseFireBalls(dwarf);
+            darkwizard.UseDaggers(dwarf);
             dwarf.RestoreHealth();
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
