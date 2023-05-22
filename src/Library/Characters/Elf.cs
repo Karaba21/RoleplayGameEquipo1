@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Elf : Character
+    public class Elf : Heroes
     {
         // string name
         // double health
@@ -26,6 +26,7 @@ namespace Library
             this.item1 = fireballs;
             this.item2 = whirlwind;
             this.item3 = shield;
+            this.VP = 0;
 
             this.items.Add(this.item1);
             this.items.Add(this.item2);
@@ -34,31 +35,27 @@ namespace Library
         // public void Heal()
         // public void RestoreHealth()
         // public void UseAllStrength(Character character)
-        public void UseFireBalls(Character character) // item1
+        // public void AddItem(Items item)
+        // public void RemoveItem(Items item)
+        public void UseFireBalls(Enemies enemy) // item1
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item1.damage)
             {
-                if (character.totaldefense < this.item1.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item1.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
             }
         }
-        public void UseWhirlWind(Character character) // item2
+        public void UseWhirlWind(Enemies enemy) // item2
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item2.damage)
             {
-                if (character.totaldefense < this.item2.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item2.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
             }
         }
-        public void HealOther(Character character, double medicine)
+        public void HealOther(Heroes hero, double medicine)
         {
-            if (character != this)
+            if (hero != this)
             {
-                character.Heal(medicine);
+                hero.Heal(medicine);
                 this.Heal(5);
             }
         }

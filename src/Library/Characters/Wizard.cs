@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Wizard : Character
+    public class Wizard : Heroes
     {
         // string name
         // double health
@@ -12,7 +12,7 @@ namespace Library
         public override MagicClub item2 { get ;}
         public override MagicHat item3 { get ;}
         // double totaldamage = 90 + (#spells * 15) + spellsdamage
-        // double totaldefense = 5 + (#spells * 5) + spellsdefense
+        // double totaldefense = 5 + (#spells * 5) + spellsdefense + 40
         public Wizard(string name)
         {
             // Cada vez que creo un Mago, creo un Libro de Hechizos y un Bastón mágico
@@ -26,6 +26,7 @@ namespace Library
             this.item1 = spellbook;
             this.item2 = magicclub;
             this.item3 = magichat;
+            this.VP = 0;
 
             this.items.Add(this.item1);
             this.items.Add(this.item2);
@@ -34,26 +35,23 @@ namespace Library
         // public void Heal()
         // public void RestoreHealth()
         // public void UseAllStrength(Character character)
-        public void UseMagicClub(Character character) // item2
+        // public void AddItem(Items item)
+        // public void RemoveItem(Items item)
+
+        public void UseMagicClub(Enemies enemy) // item2
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item2.damage)
             {
-                if (character.totaldefense < this.item2.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item2.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
             }
         }
-        public void UseSpell(Spell spell, Character character) // item1
+        public void UseSpell(Spell spell, Enemies enemy) // item1
         {
-            if (character != this)
+            if (this.item1.spells.Contains(spell))
             {
-                if (this.item1.spells.Contains(spell))
+                if (enemy.totaldefense < (spell.damage + this.item1.damage))
                 {
-                    if (character.totaldefense < (spell.damage + this.item1.damage))
-                    {
-                        character.health = character.health + character.totaldefense - spell.damage - this.item1.spellsdamagebonus;
-                    }
+                    enemy.health = enemy.health + enemy.totaldefense - spell.damage - this.item1.spellsdamagebonus;
                 }
             }
         }

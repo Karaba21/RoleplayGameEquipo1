@@ -7,18 +7,16 @@ namespace Library.Test
 {
     public class ElfTest
     {
-        // En esta clase hay 12 tests.
-        private Wizard wizard;
-        private Dwarf dwarf;
+        // En esta clase hay 10 tests.
         private Elf elf;
         private Elf otherelf;
+        private Golem golem;
         [SetUp]
         public void SetUp()
         {
-            wizard = new Wizard("Merlin"); // defense 50
-            dwarf = new Dwarf("Grumpy"); // defense = 40
             elf = new Elf("Sombrio"); // defense = 70
             otherelf = new Elf("Dobby"); // defense = 70
+            golem = new Golem("Strix"); // defense = 705
         }
         [Test]
         public void GetTotalDamageTest()
@@ -37,49 +35,29 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(elf.totaldefense));
         }
         [Test]
-        public void UseFireBallsTest1() // damage = 85
+        public void UseFireBallsTest() // damage = 85
         {
             // Testeo que funcione el ataque con Bolas de Fuego
             double expected = 985;
-            elf.UseFireBalls(otherelf);
+            elf.UseFireBalls(golem);
 
-            Assert.That(expected, Is.EqualTo(otherelf.health));
+            Assert.That(expected, Is.EqualTo(golem.health));
         }
         [Test]
-        public void UseFireBallsTest2() // damage = 85
-        {
-            // Testeo que funcione el ataque con Bolas de Fuego en personajes con valores de defensa distintos
-            double expected = 955;
-            elf.UseFireBalls(dwarf);
-
-            Assert.That(expected, Is.EqualTo(dwarf.health));
-        }
-        [Test]
-        public void UseWhirlWindTest1() // damage = 90
+        public void UseWhirlWindTest() // damage = 90
         {
             // Testeo que funcione al ataque con Tornado
-            double expected = 955;
-            elf.UseWhirlWind(wizard);
-
-            Assert.That(expected, Is.EqualTo(wizard.health));
-        }
-        [Test]
-        public void UseWhirlWindTest2() // damage = 90
-        {
-            // Testeo que funcione le ataque con Tornado en personajes con valores de defensa distintos
             double expected = 980;
-            elf.UseWhirlWind(otherelf);
+            elf.UseWhirlWind(golem);
 
-            Assert.That(expected, Is.EqualTo(otherelf.health));
+            Assert.That(expected, Is.EqualTo(golem.health));
         }
         [Test]
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
-            double expected = 980;
-            otherelf.UseFireBalls(elf);
-            otherelf.UseWhirlWind(elf);
-            otherelf.UseFireBalls(elf);
+            double expected = 950;
+            golem.UseAllStrength(elf); // health = 940
             elf.Heal(30);
 
             Assert.That(expected, Is.EqualTo(elf.health));
@@ -89,8 +67,7 @@ namespace Library.Test
         {
             // Testeo que la vida no se pase del valor máximo, que es 1000
             double expected = 1000;
-            otherelf.UseFireBalls(elf);
-            otherelf.UseWhirlWind(elf);
+            golem.UseFists(elf);
             elf.Heal(500);
 
             Assert.That(expected, Is.EqualTo(elf.health));
@@ -100,13 +77,9 @@ namespace Library.Test
         {
             // Testeo que funcione el método RestoreHealth()
             double expected = 1000;
-            otherelf.UseFireBalls(elf);
-            otherelf.UseFireBalls(elf);
-            otherelf.UseWhirlWind(elf);
-            otherelf.UseFireBalls(elf);
-            otherelf.UseFireBalls(elf);
-            otherelf.UseWhirlWind(elf);
-            otherelf.UseFireBalls(elf);
+            golem.UseAllStrength(elf);
+            golem.UseAllStrength(elf);
+            golem.UseAllStrength(elf);
             elf.RestoreHealth();
 
             Assert.That(expected, Is.EqualTo(elf.health));
@@ -115,31 +88,31 @@ namespace Library.Test
         public void UseAllStrengthTest() // damage = 175
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 870;
-            elf.UseAllStrength(wizard);
+            double expected = 895;
+            elf.UseAllStrength(golem);
 
-            Assert.That(expected, Is.EqualTo(wizard.health));
+            Assert.That(expected, Is.EqualTo(golem.health));
         }
         [Test]
         public void HealOtherTest1()
         {
             // Testeo que funcione la curación a otro personaje
-            double expected = 970;
-            elf.UseFireBalls(wizard);
-            elf.HealOther(wizard, 10);
+            double expected = 930;
+            golem.UseAllStrength(otherelf);
+            elf.HealOther(otherelf, 10);
 
-            Assert.That(expected, Is.EqualTo(wizard.health));
+            Assert.That(expected, Is.EqualTo(otherelf.health));
         }
         [Test]
         public void HealOtherTest2()
         {
             // Testeo que la vida del elfo que cura a otro personaje aumente al hacerlo
-            double expected = 990;
-            elf.UseFireBalls(otherelf);
-            elf.UseWhirlWind(dwarf);
-            otherelf.HealOther(dwarf, 15);
+            double expected = 925;
+            golem.UseAllStrength(otherelf);
+            golem.UseAllStrength(elf);
+            elf.HealOther(otherelf, 10);
 
-            Assert.That(expected, Is.EqualTo(otherelf.health));
+            Assert.That(expected, Is.EqualTo(elf.health));
         }
     }
 }

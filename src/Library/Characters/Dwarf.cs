@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class Dwarf : Character
+    public class Dwarf : Heroes
     {
         // string name
         // double health
@@ -26,6 +26,7 @@ namespace Library
             this.item1 = crossbow;
             this.item2 = daggers;
             this.item3 = scythe;
+            this.VP = 0;
 
             this.items.Add(this.item1);
             this.items.Add(this.item2);
@@ -34,34 +35,27 @@ namespace Library
         // public void Heal()
         // public void RestoreHealth()
         // public void UseAllStrength(Character character)
-        public void UseDaggers(Character character) // item2
+        // public void AddItem(Items item)
+        // public void RemoveItem(Items item)
+        public void UseCrossbow(Enemies enemy) // item1
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item1.damage)
             {
-                if (character.totaldefense < this.item2.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item2.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
             }
         }
-        public void UseCrossbow(Character character) // item1
+        public void UseDaggers(Enemies enemy) // item2
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item2.damage)
             {
-                if (character.totaldefense < this.item1.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item1.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
             }
         }
-        public void UseScythe(Character character) // item3
+        public void UseScythe(Enemies enemy) // item3
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item3.damage)
             {
-                if (character.totaldefense < this.item3.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item3.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
             }
         }
         public void ActivateDynamite()
