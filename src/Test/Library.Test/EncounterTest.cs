@@ -7,6 +7,7 @@ namespace Library.Test
 {
     public class EncounterTest
     {
+        // En esta clase hay 7 tests.
         private Wizard wizard1;
         private Wizard wizard2;
         private Dwarf dwarf1;
