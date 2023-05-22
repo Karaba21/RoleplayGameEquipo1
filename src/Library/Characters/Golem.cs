@@ -19,7 +19,7 @@ namespace Library
             this.item1 = fists;
             this.item2 = golemite;
             this.item3 = stones;
-            this.VP = 50;
+            this.VP = 3;
 
             this.items.Add(this.item1);
             this.items.Add(this.item2);
