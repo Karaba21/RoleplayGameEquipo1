@@ -7,7 +7,7 @@ namespace Library.Test
 {
     public class DarkKnightTest
     {
-        //Esta clase tiene 4 tests
+        //Esta clase tiene 4 test realizados.
         private Dwarf dwarf;
         private DarkKnight darkKnight;
 
