@@ -4,8 +4,8 @@ namespace Library
     {
         public SnakeHair()
         {
-            this.damage = 50;
-            this.defense = 30;
+            this.damage = 60;
+            this.defense = 20;
         }
     }
 }

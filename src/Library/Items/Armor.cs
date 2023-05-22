@@ -5,7 +5,7 @@ namespace Library
         public Armor()
         {
             this.damage = 0;
-            this.defense = 60;
+            this.defense = 35;
         }
     }
 }

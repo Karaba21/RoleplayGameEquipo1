@@ -2,35 +2,36 @@ using System;
 using System.Collections.Generic;
 using Library;
 using NUnit.Framework;
+
 namespace Library.Test
-// Esta clase tiene 5 tests
 {
     public class DarkWizardTest
     {
+        // Esta clase tiene 5 tests
         private DarkWizard darkWizard;
         private Dwarf dwarf;
-        
         [SetUp]
         public void SetUp()
         {
-            dwarf = new Dwarf("Tommy"); // defense = 70
+            dwarf = new Dwarf("Tommy"); // defense = 40
             darkWizard = new DarkWizard("Eladio"); // defense = 40
         }
         [Test]
         public void UseDaggersTest() // damage = 70
         {
             // Testeo que funcione el ataque con Dagas
-            double expected = 1000;
+            double expected = 970;
             darkWizard.UseDaggers(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }
         [Test]
-        public void UseFireBallsTest()//damage 85 - 40=45.. 1000-45=955
+        public void UseFireBallsTest()// damage 85
         {
-           double expected=955;
-           darkWizard.UseFireBalls(dwarf);
-           
+            // Testeo que funcionen las Bolas de Fuego
+            double expected = 955;
+            darkWizard.UseFireBalls(dwarf);
+
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }
         [Test]

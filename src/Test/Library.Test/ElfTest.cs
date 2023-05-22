@@ -30,7 +30,7 @@ namespace Library.Test
         public void GetTotalDefenseTest()
         {
             // Verifico que la cuenta de totaldefense funcione
-            double expected = 70;
+            double expected = 55;
 
             Assert.That(expected, Is.EqualTo(elf.totalDefense));
         }
@@ -38,7 +38,7 @@ namespace Library.Test
         public void UseFireBallsTest() // damage = 85
         {
             // Testeo que funcione el ataque con Bolas de Fuego
-            double expected = 985;
+            double expected = 975;
             elf.UseFireBalls(golem);
 
             Assert.That(expected, Is.EqualTo(golem.health));
@@ -47,7 +47,7 @@ namespace Library.Test
         public void UseWhirlWindTest() // damage = 90
         {
             // Testeo que funcione al ataque con Tornado
-            double expected = 980;
+            double expected = 970;
             elf.UseWhirlWind(golem);
 
             Assert.That(expected, Is.EqualTo(golem.health));
@@ -56,8 +56,8 @@ namespace Library.Test
         public void HealTest1()
         {
             // Testeo que la capacidad de recuperar vida funcione
-            double expected = 950;
-            golem.UseAllStrength(elf); // health = 940
+            double expected = 925;
+            golem.UseAllStrength(elf); // health = 895
             elf.Heal(30);
 
             Assert.That(expected, Is.EqualTo(elf.health));
@@ -88,7 +88,7 @@ namespace Library.Test
         public void UseAllStrengthTest() // damage = 175
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 895;
+            double expected = 885;
             elf.UseAllStrength(golem);
 
             Assert.That(expected, Is.EqualTo(golem.health));
@@ -97,8 +97,8 @@ namespace Library.Test
         public void HealOtherTest1()
         {
             // Testeo que funcione la curación a otro personaje
-            double expected = 930;
-            golem.UseAllStrength(otherElf);
+            double expected = 905;
+            golem.UseAllStrength(otherElf); // health = 895
             elf.HealOther(otherElf, 10);
 
             Assert.That(expected, Is.EqualTo(otherElf.health));
@@ -107,9 +107,9 @@ namespace Library.Test
         public void HealOtherTest2()
         {
             // Testeo que la vida del elfo que cura a otro personaje aumente al hacerlo
-            double expected = 925;
+            double expected = 900;
             golem.UseAllStrength(otherElf);
-            golem.UseAllStrength(elf);
+            golem.UseAllStrength(elf); // health = 895
             elf.HealOther(otherElf, 10);
 
             Assert.That(expected, Is.EqualTo(elf.health));
