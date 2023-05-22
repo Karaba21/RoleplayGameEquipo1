@@ -11,8 +11,8 @@ namespace Library
         public override Crossbow item1 { get ;}
         public override Daggers item2 { get ;}
         public override Scythe item3 { get ;}
-        // double totaldamage // = 240
-        // double totaldefense // = 40
+        // double totalDamage // = 240
+        // double totalDefense // = 40
         public Dwarf(string name)
         {
             // Cada vez que creo un Enano, creo una Ballesta, unas Dagas y una Guadaña
@@ -39,23 +39,23 @@ namespace Library
         // public void RemoveItem(Items item)
         public void UseCrossbow(Enemies enemy) // item1
         {
-            if (enemy.totaldefense < this.item1.damage)
+            if (enemy.totalDefense < this.item1.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
+                enemy.health = enemy.health + enemy.totalDefense - this.item1.damage;
             }
         }
         public void UseDaggers(Enemies enemy) // item2
         {
-            if (enemy.totaldefense < this.item2.damage)
+            if (enemy.totalDefense < this.item2.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
+                enemy.health = enemy.health + enemy.totalDefense - this.item2.damage;
             }
         }
         public void UseScythe(Enemies enemy) // item3
         {
-            if (enemy.totaldefense < this.item3.damage)
+            if (enemy.totalDefense < this.item3.damage)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
+                enemy.health = enemy.health + enemy.totalDefense - this.item3.damage;
             }
         }
         public void ActivateDynamite()

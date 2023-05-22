@@ -4,9 +4,9 @@ namespace Library
     {
         public void UseAllStrength(Heroes hero)
         {
-            if (hero.totaldefense < this.totaldamage && this.health > 0)
+            if (hero.totalDefense < this.totalDamage && this.health > 0)
             {
-                hero.health = hero.health + hero.totaldefense - this.totaldamage;
+                hero.health = hero.health + hero.totalDefense - this.totalDamage;
             }
         }
     }

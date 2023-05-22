@@ -27,16 +27,16 @@ namespace Library
         }
         public void UseScythe(Heroes hero) // item3
         {
-            if (hero.totaldefense < this.item3.damage)
+            if (hero.totalDefense < this.item3.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item3.damage;
+                hero.health = hero.health + hero.totalDefense - this.item3.damage;
             }
         }
         public void UseBombs(Heroes hero) // item1
         {
-            if (hero.totaldefense < this.item1.damage)
+            if (hero.totalDefense < this.item1.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totalDefense - this.item1.damage;
             }
         }        
     }

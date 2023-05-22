@@ -6,48 +6,48 @@ namespace Library
     public class SpellBook : Items
     {
         public List<Spell> spells { get ; set ;}
-        public double spellsdamagebonus
+        public double spellsDamageBonus
         {
             get
             {
-                double spellsdamagebonus = spells.Count * 15;
-                return spellsdamagebonus;
+                double spellsDamageBonus = spells.Count * 15;
+                return spellsDamageBonus;
             }
         }
-        public double spellsdefensebonus
+        public double spellsDefenseBonus
         {
             get
             {
-                double spellsdefensebonus = spells.Count * 5;
-                return spellsdefensebonus;
+                double spellsDefenseBonus = spells.Count * 5;
+                return spellsDefenseBonus;
             }
         }
         public override double damage
         {
             get
             {
-                double totalspelldamage = 0;
-                double spellbonus = 0;
+                double totalSpellDamage = 0;
+                double spellBonus = 0;
                 foreach (Spell spell in this.spells)
                 {
-                    totalspelldamage = totalspelldamage + spell.damage;
-                    spellbonus = spellbonus + 15;
+                    totalSpellDamage = totalSpellDamage + spell.damage;
+                    spellBonus = spellBonus + 15;
                 }
-                return totalspelldamage + spellbonus;
+                return totalSpellDamage + spellBonus;
             }
         }
         public override double defense
         {
             get
             {
-                double totalspelldefense = 0;
-                double spellsbonus = 0;
+                double totalSpellDefense = 0;
+                double spellsBonus = 0;
                 foreach (Spell spell in this.spells)
                 {
-                    totalspelldefense = totalspelldefense + spell.defense;
-                    spellsbonus = spellsbonus + 5;
+                    totalSpellDefense = totalSpellDefense + spell.defense;
+                    spellsBonus = spellsBonus + 5;
                 }
-                return totalspelldefense + spellsbonus;
+                return totalSpellDefense + spellsBonus;
             }
         }
         public SpellBook()

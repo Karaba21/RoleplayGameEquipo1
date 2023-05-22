@@ -27,23 +27,23 @@ namespace Library
         }
         public void UseSword(Heroes hero) // item1
         {
-            if (hero.totaldefense < this.item1.damage)
+            if (hero.totalDefense < this.item1.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totalDefense - this.item1.damage;
             }
         }
         public void UseArmor(Heroes hero) // item2
         {
-            if (hero.totaldefense < this.item2.damage)
+            if (hero.totalDefense < this.item2.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item2.damage;
+                hero.health = hero.health + hero.totalDefense - this.item2.damage;
             }
         }
         public void UseFlail(Heroes hero) // item3
         {
-            if (hero.totaldefense < this.item3.damage)
+            if (hero.totalDefense < this.item3.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item3.damage;
+                hero.health = hero.health + hero.totalDefense - this.item3.damage;
             }
         }
     }

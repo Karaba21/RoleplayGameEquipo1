@@ -16,9 +16,9 @@ namespace Library
         }
         public void UseAllStrength(Enemies enemy)
         {
-            if (enemy.totaldefense < this.totaldamage && this.health > 0)
+            if (enemy.totalDefense < this.totalDamage && this.health > 0)
             {
-                enemy.health = enemy.health + enemy.totaldefense - this.totaldamage;
+                enemy.health = enemy.health + enemy.totalDefense - this.totalDamage;
             }
             if (enemy.health <= 0)
             {

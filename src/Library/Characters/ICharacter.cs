@@ -4,8 +4,8 @@ namespace Library
     {
         string name {get;set;}
         double health {get;set;}
-        double totaldamage {get;}
-        double totaldefense {get;}
+        double totalDamage {get;}
+        double totalDefense {get;}
         void Heal(double medicine);
         void RestoreHealth();
         void UseAllStrength(ICharacter character);

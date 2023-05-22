@@ -9,13 +9,13 @@ namespace Library.Test
     {
         // En esta clase hay 10 tests.
         private Elf elf;
-        private Elf otherelf;
+        private Elf otherElf;
         private Golem golem;
         [SetUp]
         public void SetUp()
         {
             elf = new Elf("Sombrio"); // defense = 70
-            otherelf = new Elf("Dobby"); // defense = 70
+            otherElf = new Elf("Dobby"); // defense = 70
             golem = new Golem("Strix"); // defense = 705
         }
         [Test]
@@ -24,7 +24,7 @@ namespace Library.Test
             // Verifico que la cuenta de totaldamage funcione
             double expected = 175;
 
-            Assert.That(expected, Is.EqualTo(elf.totaldamage));
+            Assert.That(expected, Is.EqualTo(elf.totalDamage));
         }
         [Test]
         public void GetTotalDefenseTest()
@@ -32,7 +32,7 @@ namespace Library.Test
             // Verifico que la cuenta de totaldefense funcione
             double expected = 70;
 
-            Assert.That(expected, Is.EqualTo(elf.totaldefense));
+            Assert.That(expected, Is.EqualTo(elf.totalDefense));
         }
         [Test]
         public void UseFireBallsTest() // damage = 85
@@ -98,19 +98,19 @@ namespace Library.Test
         {
             // Testeo que funcione la curación a otro personaje
             double expected = 930;
-            golem.UseAllStrength(otherelf);
-            elf.HealOther(otherelf, 10);
+            golem.UseAllStrength(otherElf);
+            elf.HealOther(otherElf, 10);
 
-            Assert.That(expected, Is.EqualTo(otherelf.health));
+            Assert.That(expected, Is.EqualTo(otherElf.health));
         }
         [Test]
         public void HealOtherTest2()
         {
             // Testeo que la vida del elfo que cura a otro personaje aumente al hacerlo
             double expected = 925;
-            golem.UseAllStrength(otherelf);
+            golem.UseAllStrength(otherElf);
             golem.UseAllStrength(elf);
-            elf.HealOther(otherelf, 10);
+            elf.HealOther(otherElf, 10);
 
             Assert.That(expected, Is.EqualTo(elf.health));
         }

@@ -12,28 +12,28 @@ namespace Library
         public abstract Items item2 { get ;}
         public abstract Items item3 { get ;}
         public double VP { get ; set ;}
-        public double totaldamage
+        public double totalDamage
         {
             get
             {
-                double totaldamage = 0;
+                double totalDamage = 0;
                 foreach (Items item in this.items)
                 {
-                    totaldamage = totaldamage + item.damage;
+                    totalDamage = totalDamage + item.damage;
                 }
-                return totaldamage;
+                return totalDamage;
             }
         }
-        public double totaldefense
+        public double totalDefense
         {
             get
             {
-                double totaldefense = 0;
+                double totalDefense = 0;
                 foreach (Items item in this.items)
                 {
-                    totaldefense = totaldefense + item.defense;
+                    totalDefense = totalDefense + item.defense;
                 }
-                return totaldefense;
+                return totalDefense;
             }
         }
         public void AddItem(Items item)

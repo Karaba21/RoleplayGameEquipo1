@@ -11,13 +11,13 @@ namespace Library
         public DarkWizard(string name)
         {
             Daggers daggers = new Daggers();
-            FireBalls fireballs = new FireBalls();
+            FireBalls fireBalls = new FireBalls();
             Scythe scythe = new Scythe();
 
             this.name = name;
             this.health = 1000;
             this.item1 = daggers;
-            this.item2 = fireballs;
+            this.item2 = fireBalls;
             this.item3 = scythe;
             this.VP = 4;
             
@@ -27,23 +27,23 @@ namespace Library
         }
         public void UseDaggers(Heroes hero) // item1
         {
-            if (hero.totaldefense < this.item1.damage)
+            if (hero.totalDefense < this.item1.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item1.damage;
+                hero.health = hero.health + hero.totalDefense - this.item1.damage;
             }
         }
         public void UseFireBalls(Heroes hero) // item2
         {
-            if (hero.totaldefense < this.item2.damage)
+            if (hero.totalDefense < this.item2.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item2.damage;
+                hero.health = hero.health + hero.totalDefense - this.item2.damage;
             }
         }
         public void UseScythe(Heroes hero) // item3
         {
-            if (hero.totaldefense < this.item3.damage)
+            if (hero.totalDefense < this.item3.damage)
             {
-                hero.health = hero.health + hero.totaldefense - this.item3.damage;
+                hero.health = hero.health + hero.totalDefense - this.item3.damage;
             }
         }
     }
