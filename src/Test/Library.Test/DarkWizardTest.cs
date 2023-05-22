@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Library;
 using NUnit.Framework;
 namespace Library.Test
+// Esta clase tiene 5 tests
 {
     public class DarkWizardTest
     {
@@ -12,8 +13,8 @@ namespace Library.Test
         [SetUp]
         public void SetUp()
         {
-            Dwarf dwarf = new Dwarf("Tommy"); // defense = 70
-            DarkWizard darkWizard = new DarkWizard("Eladio"); // defense = 40
+            dwarf = new Dwarf("Tommy"); // defense = 70
+            darkWizard = new DarkWizard("Eladio"); // defense = 40
         }
         [Test]
         public void UseDaggersTest() // damage = 70
