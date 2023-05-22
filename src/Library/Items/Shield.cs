@@ -5,7 +5,7 @@ namespace Library
         public Shield()
         {
             this.damage = 0;
-            this.defense = 65;
+            this.defense = 50;
         }
     }
 }

@@ -17,9 +17,9 @@ namespace Library.Test
         [SetUp]
         public void SetUp()
         {
-            wizard = new Wizard("Merlin"); // defense = 50
-            otherWizard = new Wizard("Houdini"); // defense = 5
-            bomber = new Bomber("Bombastic"); // 80
+            wizard = new Wizard("Merlin"); // defense = 80
+            otherWizard = new Wizard("Houdini"); // defense = 45
+            bomber = new Bomber("Bombastic"); // defense = 65
             spell1 = new Spell("ataque", 65, 0);
             spell2 = new Spell("golpe", 20, 0);
             spell3 = new Spell("escudo", 0, 30);
@@ -45,10 +45,10 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(wizard.totalDefense));
         }
         [Test]
-        public void UseSpellTest1()
+        public void UseSpellTest1() // damage = 80
         {
             // Testeo que funcione el uso del hechizo
-            double expected = 970;
+            double expected = 955;
             wizard.UseSpell(spell1, bomber);
 
             Assert.That(expected, Is.EqualTo(bomber.health));
@@ -67,7 +67,7 @@ namespace Library.Test
         public void UseMagicClubTest() // damage = 90
         {
             // Testeo que funcione al ataque con el Bastón Mágico
-            double expected = 990;
+            double expected = 975;
             wizard.UseMagicClub(bomber);
 
             Assert.That(expected, Is.EqualTo(bomber.health));
@@ -104,10 +104,10 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(wizard.health));
         }
         [Test]
-        public void UseAllStrengthTest()
+        public void UseAllStrengthTest() // damage = 220
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 860;
+            double expected = 845;
             wizard.UseAllStrength(bomber);
 
             Assert.That(expected, Is.EqualTo(bomber.health));

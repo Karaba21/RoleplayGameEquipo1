@@ -5,7 +5,7 @@ namespace Library
         public Sword()
         {
             this.damage = 75;
-            this.defense = 25;
+            this.defense = 10;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Library
     {
         public Fists()
         {
-            this.damage = 50;
+            this.damage = 60;
             this.defense = 35;
         }
     }

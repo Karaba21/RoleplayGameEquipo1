@@ -4,8 +4,8 @@ namespace Library
     {
         public TelepathicHissing()
         {
-            this.damage = 0;
-            this.defense = 40;
+            this.damage = 25;
+            this.defense = 20;
         }
     }
 }
