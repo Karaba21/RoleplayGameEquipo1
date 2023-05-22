@@ -37,34 +37,25 @@ namespace Library
         // public void UseAllStrength(Character character)
         // public void AddItem(Items item)
         // public void RemoveItem(Items item)
-        public void UseDaggers(Character character) // item2
+        public void UseCrossbow(Enemies enemy) // item1
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item1.damage)
             {
-                if (character.totaldefense < this.item2.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item2.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item1.damage;
             }
         }
-        public void UseCrossbow(Character character) // item1
+        public void UseDaggers(Enemies enemy) // item2
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item2.damage)
             {
-                if (character.totaldefense < this.item1.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item1.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
             }
         }
-        public void UseScythe(Character character) // item3
+        public void UseScythe(Enemies enemy) // item3
         {
-            if (character != this)
+            if (enemy.totaldefense < this.item3.damage)
             {
-                if (character.totaldefense < this.item3.damage)
-                {
-                    character.health = character.health + character.totaldefense - this.item3.damage;
-                }
+                enemy.health = enemy.health + enemy.totaldefense - this.item3.damage;
             }
         }
         public void ActivateDynamite()

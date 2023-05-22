@@ -5,11 +5,10 @@ namespace Library
 {
     public class Golem : Enemies
     {
-        public override Fists item1 {get;}
-        public override Golemite item2 {get;}
-        public override Stones item3 {get;}
-
-        public Golem (string name)
+        public override Fists item1 { get ;}
+        public override Golemite item2 { get ;}
+        public override Stones item3 { get ;}
+        public Golem(string name)
         {
             Fists fists = new Fists();
             Golemite golemite = new Golemite();
@@ -26,7 +25,6 @@ namespace Library
             this.items.Add(this.item2);
             this.items.Add(this.item3);
         }
-
         public void UseFists(Heroes hero) //item1
         {
             if (hero.totaldefense < this.item1.damage)

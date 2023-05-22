@@ -8,12 +8,11 @@ namespace Library
         public override Bombs item1 { get ;}
         public override Shield item2 { get ;}
         public override Scythe item3 { get ;}
-
-        public Bomber (string name)
+        public Bomber(string name)
         {
             Bombs bombs = new Bombs();
             Shield shield = new Shield();
-            Scythe scythe= new Scythe();
+            Scythe scythe = new Scythe();
 
             this.name = name;
             this.health = 1000;
@@ -26,21 +25,20 @@ namespace Library
             this.items.Add(this.item2);
             this.items.Add(this.item3);
         }
-        public void Usescythe(Heroes hero) // item3
+        public void UseScythe(Heroes hero) // item3
         {
             if (hero.totaldefense < this.item3.damage)
             {
                 hero.health = hero.health + hero.totaldefense - this.item3.damage;
             }
         }
-        public void Usebombs(Heroes hero) // item1
+        public void UseBombs(Heroes hero) // item1
         {
             if (hero.totaldefense < this.item1.damage)
             {
                 hero.health = hero.health + hero.totaldefense - this.item1.damage;
             }
-        }
-        
+        }        
     }
 }
 

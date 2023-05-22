@@ -12,7 +12,7 @@ namespace Library
         public override MagicClub item2 { get ;}
         public override MagicHat item3 { get ;}
         // double totaldamage = 90 + (#spells * 15) + spellsdamage
-        // double totaldefense = 5 + (#spells * 5) + spellsdefense
+        // double totaldefense = 5 + (#spells * 5) + spellsdefense + 40
         public Wizard(string name)
         {
             // Cada vez que creo un Mago, creo un Libro de Hechizos y un Bastón mágico
@@ -38,11 +38,11 @@ namespace Library
         // public void AddItem(Items item)
         // public void RemoveItem(Items item)
 
-        public void UseMagicClub(Character character) // item2
+        public void UseMagicClub(Enemies enemy) // item2
         {
-            if (character.totaldefense < this.item2.damage)
+            if (enemy.totaldefense < this.item2.damage)
             {
-                character.health = character.health + character.totaldefense - this.item2.damage;
+                enemy.health = enemy.health + enemy.totaldefense - this.item2.damage;
             }
         }
         public void UseSpell(Spell spell, Enemies enemy) // item1
