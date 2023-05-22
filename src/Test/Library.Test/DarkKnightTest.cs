@@ -7,7 +7,7 @@ namespace Library.Test
 {
     public class DarkKnightTest
     {
-        //Esta clase tiene 
+        //Esta clase tiene 4 test realizados.
         private Dwarf dwarf;
         private DarkKnight darkKnight;
 
@@ -17,7 +17,7 @@ namespace Library.Test
             dwarf = new Dwarf("Lore"); // defense = 40
             darkKnight= new DarkKnight("Charles"); // defense = 105
         }
-        
+
         [Test]
         public void GetTotalDamageTest()
         {
