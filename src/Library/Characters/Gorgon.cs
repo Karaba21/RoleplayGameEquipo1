@@ -39,5 +39,12 @@ namespace Library
                 hero.health = hero.health + hero.totalDefense - this.item2.damage;
             }
         }
+        public void UseTelepathicHissing(Heroes hero) // item3
+        {
+            if (hero.totalDefense < this.item3.damage)
+            {
+                hero.health = hero.health + hero.totalDefense - this.item3.damage;
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Library.Test
 {
     public class DarkWizardTest
     {
-        // Esta clase tiene 5 tests
+        // Esta clase tiene 6 tests
         private DarkWizard darkWizard;
         private Dwarf dwarf;
         [SetUp]
@@ -59,6 +59,13 @@ namespace Library.Test
 
             Assert.That(expected, Is.EqualTo(darkWizard.totalDefense));
         }
+        [Test]
+        public void UseAllStrengthTest()
+        {
+            double expected = 795;
+            darkWizard.UseAllStrength(dwarf);
 
+            Assert.That(expected, Is.EqualTo(dwarf.health));
+        }
     }    
 }

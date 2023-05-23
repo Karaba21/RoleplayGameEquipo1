@@ -41,13 +41,14 @@ namespace Library.Test
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }
+        [Test]
         public void UseFlailTest() // damage = 85
         {
             // Testeo que funcione el ataque con Flail.
             double expected = 955;
             darkKnight.UseFlail(dwarf);
 
-            Assert.That(expected, Is.EqualTo(darkKnight.health));
+            Assert.That(expected, Is.EqualTo(dwarf.health));
         }
         [Test]
         public void UseAllStrengthTest()
