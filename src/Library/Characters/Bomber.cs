@@ -8,6 +8,9 @@ namespace Library
         public override Bombs item1 { get ;}
         public override Shield item2 { get ;}
         public override Scythe item3 { get ;}
+
+        //total defense = 65
+        //total damage = 215
         public Bomber(string name)
         {
             Bombs bombs = new Bombs();
