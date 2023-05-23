@@ -7,7 +7,7 @@ namespace Library
     {
         public Golemite()
         {
-            this.damage = 60;
+            this.damage = 50;
             this.defense = 5;
         }
     }
