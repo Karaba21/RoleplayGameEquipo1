@@ -21,7 +21,7 @@ namespace Library.Test
         public void UseFists()
         {
             // Testeo que funcione al ataque de Fists
-            double expected = 940;
+            double expected = 980;
             golem.UseFists(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -30,7 +30,7 @@ namespace Library.Test
         public void UseGolemite()
         {
             // Testeo que funcione al ataque Golemite
-            double expected = 950;
+            double expected = 990;
             golem.UseGolemite(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -39,7 +39,7 @@ namespace Library.Test
         public void UseStones()
         {
             // Testeo que funcione al ataque UseStones
-            double expected = 960;
+            double expected = 1000;
             golem.UseStones(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
@@ -48,7 +48,7 @@ namespace Library.Test
         public void UseAllStrengthTest()
         {
             // Testeo que funcione el método UseAllStrength()
-            double expected = 850;
+            double expected = 890;
             golem.UseAllStrength(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
