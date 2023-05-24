@@ -20,18 +20,14 @@ namespace Library.Test
             wizard = new Wizard("Merlin"); // defense = 80
             otherWizard = new Wizard("Houdini"); // defense = 45
             bomber = new Bomber("Bombastic"); // defense = 65
-            spell1 = new Spell("ataque", 65, 0);
-            spell2 = new Spell("golpe", 20, 0);
-            spell3 = new Spell("escudo", 0, 30);
-
-            wizard.item1.AddSpell(spell1);
-            wizard.item1.AddSpell(spell2);
-            wizard.item1.AddSpell(spell3);
+            spell1 = wizard.item1.AddSpell("ataque", 65, 0);
+            spell2 = wizard.item1.AddSpell("golpe", 20, 0);
+            spell3 = wizard.item1.AddSpell("escudo", 0, 30);
         }
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 220;
 
             Assert.That(expected, Is.EqualTo(wizard.totalDamage));
@@ -39,7 +35,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 90;
 
             Assert.That(expected, Is.EqualTo(wizard.totalDefense));
@@ -56,7 +52,7 @@ namespace Library.Test
         [Test]
         public void UseSpellTest2()
         {
-            // Testeo que si el hechizo no esta en el libro de mywizard, otherwizard no pierda vida
+            // Testeo que si el hechizo no esta en el libro de wizard, otherWizard no pierda vida
             Spell spell4 = new Spell("explosion", 70, 5);
             double expected = 1000;
             wizard.UseSpell(spell4, bomber);
@@ -66,7 +62,7 @@ namespace Library.Test
         [Test]
         public void UseMagicClubTest() // damage = 90
         {
-            // Testeo que funcione al ataque con el Bastón Mágico
+            // Testeo que funcione el ataque con el Bastón Mágico
             double expected = 975;
             wizard.UseMagicClub(bomber);
 

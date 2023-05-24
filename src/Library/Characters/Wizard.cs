@@ -8,6 +8,8 @@ namespace Library
         // string name
         // double health
         // List<Items> items
+        // double VP
+        // double VPposEncounter
         public override SpellBook item1 { get ;}
         public override MagicClub item2 { get ;}
         public override MagicHat item3 { get ;}
@@ -34,17 +36,10 @@ namespace Library
         }
         // public void Heal()
         // public void RestoreHealth()
-        // public void UseAllStrength(Character character)
+        // public void UseAllStrength(Enemies enemy)
         // public void AddItem(Items item)
         // public void RemoveItem(Items item)
 
-        public void UseMagicClub(Enemies enemy) // item2
-        {
-            if (enemy.totalDefense < this.item2.damage)
-            {
-                enemy.health = enemy.health + enemy.totalDefense - this.item2.damage;
-            }
-        }
         public void UseSpell(Spell spell, Enemies enemy) // item1
         {
             if (this.item1.spells.Contains(spell))
@@ -53,6 +48,13 @@ namespace Library
                 {
                     enemy.health = enemy.health + enemy.totalDefense - spell.damage - this.item1.spellsDamageBonus;
                 }
+            }
+        }
+        public void UseMagicClub(Enemies enemy) // item2
+        {
+            if (enemy.totalDefense < this.item2.damage)
+            {
+                enemy.health = enemy.health + enemy.totalDefense - this.item2.damage;
             }
         }
     }

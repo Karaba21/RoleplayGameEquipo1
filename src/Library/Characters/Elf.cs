@@ -8,14 +8,16 @@ namespace Library
         // string name
         // double health
         // List<Items> items
+        // double VP
+        // double VPposEncounter
         public override FireBalls item1 { get ;}
         public override WhirlWind item2 { get ;}
         public override Shield item3 { get ;}
-        // double totalDamage // = 175
-        // double totalDefense // = 70
+        // double totalDamage = 85 + 90 + 0
+        // double totalDefense = 5 + 0 + 50
         public Elf(string name)
         {
-            // Cada vez que creo un Elfo, creo Bolas de Fuego, un Tornado y un Escudo
+            // Cada vez que creo un Elfo, creo unas Bolas de Fuego, un Tornado y un Escudo
             FireBalls fireBalls = new FireBalls();
             WhirlWind whirlWind = new WhirlWind();
             Shield shield = new Shield();
@@ -34,7 +36,7 @@ namespace Library
         }
         // public void Heal()
         // public void RestoreHealth()
-        // public void UseAllStrength(Character character)
+        // public void UseAllStrength(Enemies enemy)
         // public void AddItem(Items item)
         // public void RemoveItem(Items item)
         public void UseFireBalls(Enemies enemy) // item1

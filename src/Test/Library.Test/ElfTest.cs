@@ -14,14 +14,14 @@ namespace Library.Test
         [SetUp]
         public void SetUp()
         {
-            elf = new Elf("Sombrio"); // defense = 70
-            otherElf = new Elf("Dobby"); // defense = 70
-            golem = new Golem("Strix"); // defense = 705
+            elf = new Elf("Sombrio"); // defense = 55
+            otherElf = new Elf("Dobby"); // defense = 55
+            golem = new Golem("Strix"); // defense = 60
         }
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 175;
 
             Assert.That(expected, Is.EqualTo(elf.totalDamage));
@@ -29,7 +29,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 55;
 
             Assert.That(expected, Is.EqualTo(elf.totalDefense));
@@ -46,7 +46,7 @@ namespace Library.Test
         [Test]
         public void UseWhirlWindTest() // damage = 90
         {
-            // Testeo que funcione al ataque con Tornado
+            // Testeo que funcione el ataque con Tornado
             double expected = 970;
             elf.UseWhirlWind(golem);
 

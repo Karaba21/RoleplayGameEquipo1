@@ -8,11 +8,13 @@ namespace Library
         // string name
         // double health
         // List<Items> items
+        // double VP
+        // double VPposEncounter
         public override Crossbow item1 { get ;}
         public override Daggers item2 { get ;}
         public override Scythe item3 { get ;}
-        // double totalDamage // = 240
-        // double totalDefense // = 40
+        // double totalDamage = 80 + 70 + 90
+        // double totalDefense = 5 + 20 + 15
         public Dwarf(string name)
         {
             // Cada vez que creo un Enano, creo una Ballesta, unas Dagas y una Guadaña
@@ -34,7 +36,7 @@ namespace Library
         }
         // public void Heal()
         // public void RestoreHealth()
-        // public void UseAllStrength(Character character)
+        // public void UseAllStrength(Enemies enemy)
         // public void AddItem(Items item)
         // public void RemoveItem(Items item)
         public void UseCrossbow(Enemies enemy) // item1

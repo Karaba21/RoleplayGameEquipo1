@@ -56,9 +56,11 @@ namespace Library
             
             this.spells = spells;
         }
-        public void AddSpell(Spell spell)
+        public Spell AddSpell(string spellName, double damage, double defemse)
         {
+            Spell spell = new Spell(spellName, damage, defemse);
             this.spells.Add(spell);
+            return spell;
         }
         public void RemoveSpell(Spell spell)
         {

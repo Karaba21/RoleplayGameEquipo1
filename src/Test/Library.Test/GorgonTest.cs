@@ -19,7 +19,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 190;
             
             Assert.That(expected, Is.EqualTo(gorgon.totalDamage));
@@ -27,7 +27,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 65;
 
             Assert.That(expected, Is.EqualTo(gorgon.totalDefense));
@@ -35,7 +35,7 @@ namespace Library.Test
         [Test]
         public void UseSnakeHairTest()
         {
-            // Testeo que funcione al ataque con las Serpientes en el pelo
+            // Testeo que funcione el ataque con las Serpientes en el Pelo
             double expected = 980;
             gorgon.UseSnakeHair(dwarf);
 
@@ -44,7 +44,7 @@ namespace Library.Test
         [Test]
         public void UseDeathStareTest()
         {
-            // Testeo que funcione al ataque con la Mirada Petrificadora
+            // Testeo que funcione el ataque con la Mirada Petrificadora
             double expected = 935;
             gorgon.UseDeathStare(dwarf);
 
@@ -53,7 +53,7 @@ namespace Library.Test
         [Test]
         public void UseTelePathicHissing()
         {
-            // Testeo que funcione al ataque con el Silbido de Serpiente telepatico
+            // Testeo que funcione el ataque con el Silbido de Serpiente telepatico
             double expected = 1000;
             gorgon.UseTelepathicHissing(dwarf);
 

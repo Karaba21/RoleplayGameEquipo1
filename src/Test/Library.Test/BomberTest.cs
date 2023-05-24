@@ -6,19 +6,20 @@ using NUnit.Framework;
 namespace Library.Test
 {
     public class BomberTest
-    {  
-         private Dwarf dwarf;
+    {
+        // En esta clase hay 5 tests.
+        private Dwarf dwarf;
         private Bomber bomber;
         [SetUp]
-         public void SetUp()
+        public void SetUp()
         {
-            dwarf = new Dwarf("Andy"); 
-            bomber= new Bomber("KongTheBomber"); 
+            dwarf = new Dwarf("Andy"); // defense = 40
+            bomber= new Bomber("KongTheBomber"); // defemse = 65
         }
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 215;
 
             Assert.That(expected, Is.EqualTo(bomber.totalDamage));
@@ -26,26 +27,36 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 65;
 
             Assert.That(expected, Is.EqualTo(bomber.totalDefense));
         }
-         public void UseScytheTest()
+        [Test]
+        public void UseScytheTest()
         {
             // Testeo que funcione el ataque con Guadaña
             double expected = 950;
             bomber.UseScythe(dwarf);
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
-        }   
-         public void UseBombsTest()
+        }
+        [Test]
+        public void UseBombsTest()
         {
-            // Testeo que funcione el ataque con las bombas
+            // Testeo que funcione el ataque con las Bombas
             double expected = 915;
             bomber.UseBombs(dwarf);
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }   
+        [Test]
+        public void UseAllStrengthTest()
+        {
+            // Testeo que funcione el método UseAllStrength()
+            double expected = 825;
+            bomber.UseAllStrength(dwarf);
 
+            Assert.That(expected, Is.EqualTo(dwarf.health));
+        }
     }
 }

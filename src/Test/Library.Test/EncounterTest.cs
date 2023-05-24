@@ -18,9 +18,12 @@ namespace Library.Test
         private DarkWizard darkWizard;
         private Golem golem;
         private Gorgon gorgon;
-        private Spell spell1;
-        private Spell spell2;
-        private Spell spell3;
+        private Spell w1Spell1;
+        private Spell w1Spell2;
+        private Spell w1Spell3;
+        private Spell w2Spell1;
+        private Spell w2Spell2;
+        private Spell w2Spell3;
         [SetUp]
         public void SetUp()
         {
@@ -35,19 +38,13 @@ namespace Library.Test
             golem = new Golem("Strix");
             gorgon = new Gorgon("Medusa");
 
-            spell1 = new Spell("ataque", 65, 0);
-            spell2 = new Spell("golpe", 20, 0);
-            spell3 = new Spell("escudo", 0, 30);
+            w1Spell1 = wizard1.item1.AddSpell("ataque", 65, 0);
+            w1Spell2 = wizard1.item1.AddSpell("golpe", 20, 0);
+            w1Spell3 = wizard1.item1.AddSpell("escudo", 0, 30);
 
-            wizard1.item1.AddSpell(spell1);
-            wizard1.item1.AddSpell(spell2);
-            wizard1.item1.AddSpell(spell3);
-            wizard2.item1.AddSpell(spell1);
-            wizard2.item1.AddSpell(spell2);
-            wizard2.item1.AddSpell(spell3);
-
-            // heroes.AddRange(new List<Heroes>{wizard1, wizard2, dwarf1, dwarf2, elf});
-            // enemies.AddRange(new List<Enemies>{bomber, darkKnight, darkWizard, golem, gorgon});
+            w2Spell1 = wizard2.item1.AddSpell("ataque", 65, 0);
+            w2Spell2 = wizard2.item1.AddSpell("golpe", 20, 0);
+            w2Spell3 = wizard2.item1.AddSpell("escudo", 0, 30);
         }
         [Test]
         public void DoEncounterTest1()
@@ -103,6 +100,7 @@ namespace Library.Test
         [Test]
         public void VPTest()
         {
+            // Verifico que el aumento de los personajes funcione correctamente
             bool expected = true;
             List<Heroes> heroes = new List<Heroes> {wizard1, dwarf1, elf};
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};
@@ -117,6 +115,7 @@ namespace Library.Test
         [Test]
         public void RestoreHealthTest()
         {
+            // Verifico que la salud de wizard sea restaurada, ya que obtuvo más de 5 VP
             double expected = 1000;
             List<Heroes> heroes = new List<Heroes> {wizard1, dwarf1, elf};
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};
@@ -131,6 +130,7 @@ namespace Library.Test
         [Test]
         public void CorrectDamageTest1()
         {
+            // Verifico que elf haya terminado con la salud correcta según los ataques que recibió
             double expected = 440;
             List<Heroes> heroes = new List<Heroes> {wizard1, dwarf1, elf};
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};
@@ -144,6 +144,7 @@ namespace Library.Test
         [Test]
         public void CorrectDamageTest2()
         {
+            // Verifico que dwarf haya termiando con la salud correcta según los ataques que recibió
             double expected = 200;
             List<Heroes> heroes = new List<Heroes> {wizard1, dwarf1, elf};
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};

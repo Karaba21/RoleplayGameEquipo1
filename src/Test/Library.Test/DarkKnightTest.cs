@@ -7,7 +7,7 @@ namespace Library.Test
 {
     public class DarkKnightTest
     {
-        //Esta clase tiene 5 test realizados.
+        //Esta clase tiene 5 tests.
         private Dwarf dwarf;
         private DarkKnight darkKnight;
         [SetUp]
@@ -19,7 +19,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 160;
 
             Assert.That(expected, Is.EqualTo(darkKnight.totalDamage));
@@ -27,7 +27,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 65;
 
             Assert.That(expected, Is.EqualTo(darkKnight.totalDefense));

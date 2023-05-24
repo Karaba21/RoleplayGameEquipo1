@@ -21,7 +21,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 240;
 
             Assert.That(expected, Is.EqualTo(dwarf.totalDamage));
@@ -29,7 +29,7 @@ namespace Library.Test
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 40;
 
             Assert.That(expected, Is.EqualTo(dwarf.totalDefense));
@@ -107,7 +107,7 @@ namespace Library.Test
         [Test]
         public void ActivateDynamiteTest1()
         {
-            // Testeo que funcione el método ActivateDynamite() y que totaldamage aumente
+            // Testeo que funcione el método ActivateDynamite() y que totalDamage aumente
             double expected = 480;
             dwarf.ActivateDynamite();
 
@@ -116,7 +116,7 @@ namespace Library.Test
         [Test]
         public void ActivateDynamiteTest2()
         {
-            // Testeo que funcione el método ActivateDynamite() y que totaldefense disminuya
+            // Testeo que funcione el método ActivateDynamite() y que totalDefense disminuya
             double expected = 20;
             dwarf.ActivateDynamite();
 
@@ -125,7 +125,7 @@ namespace Library.Test
         [Test]
         public void DeactivateDynamiteTest1()
         {
-            // Testeo que funcione el método DectivateDynamite() y que totaldamage disminuya
+            // Testeo que funcione el método DectivateDynamite() y que totalDamage disminuya
             double expected = 240;
             dwarf.ActivateDynamite();
             dwarf.DeactivateDynamite();
@@ -135,7 +135,7 @@ namespace Library.Test
         [Test]
         public void DeactivateDynamiteTest2()
         {
-            // Testeo que funcione el método DeactivateDynamite() y que totaldefense aumente
+            // Testeo que funcione el método DeactivateDynamite() y que totalDefense aumente
             double expected = 40;
             dwarf.ActivateDynamite();
             dwarf.DeactivateDynamite();

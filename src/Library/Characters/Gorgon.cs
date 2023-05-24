@@ -5,15 +5,23 @@ namespace Library
 {
     public class Gorgon : Enemies
     {
+        // string name
+        // double health
+        // List<Items> items
+        // double VP
         public override SnakeHair item1 { get ;}
         public override DeathStare item2 { get ;}
         public override TelepathicHissing item3 { get ;}
+        // double totalDamage = 60 + 105 + 25
+        // doubel totalDefense = 20 + 25 + 20
         public Gorgon(string name)
         {
+            // Cada vez que creo una Gorgona, creo unas Serpientes de Pelo, una Mirada Petrificadora, y un Silbido
             SnakeHair snakeHair = new SnakeHair();
             DeathStare deathStare = new DeathStare();
             TelepathicHissing hissing = new TelepathicHissing();
 
+            // La vida del personaje va a comenzar en 1000
             this.name = name;
             this.health = 1000;
             this.item1 = snakeHair;
@@ -25,6 +33,9 @@ namespace Library
             this.items.Add(this.item2);
             this.items.Add(this.item3);
         }
+        // public void UseAllStrength(Heroes hero)
+        // public void AddItem(Items item)
+        // public void RemoveItem(Items item)
         public void UseSnakeHair(Heroes hero) // item1
         {
             if (hero.totalDefense < this.item1.damage)

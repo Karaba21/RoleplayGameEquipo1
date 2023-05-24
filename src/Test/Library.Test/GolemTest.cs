@@ -7,6 +7,7 @@ namespace Library.Test
 {
     public class GolemTest
     {
+        // Esta clase tiene 6 tests.
         public Golem golem;
         public Dwarf dwarf;
         
@@ -16,11 +17,26 @@ namespace Library.Test
             golem = new Golem("Rocky"); // defense = 60
             dwarf = new Dwarf("Ren"); // defense = 40
         }
+        [Test]
+        public void GetTotalDamageTest()
+        {
+            // Verifico que la cuenta de totalDamage funcione
+            double expected = 160;
 
+            Assert.That(expected, Is.EqualTo(golem.totalDamage));
+        }
+        [Test]
+        public void GetTotalDefenseTest()
+        {
+            // Verifico que la cuenta de totalDefense funcione
+            double expected = 60;
+
+            Assert.That(expected, Is.EqualTo(golem.totalDefense));
+        }
         [Test]
         public void UseFists()
         {
-            // Testeo que funcione al ataque de Fists
+            // Testeo que funcione el ataque de Fists
             double expected = 980;
             golem.UseFists(dwarf);
 
@@ -29,7 +45,7 @@ namespace Library.Test
         [Test]
         public void UseGolemite()
         {
-            // Testeo que funcione al ataque Golemite
+            // Testeo que funcione el ataque Golemite
             double expected = 980;
             golem.UseGolemite(dwarf);
 
@@ -38,7 +54,7 @@ namespace Library.Test
         [Test]
         public void UseStones()
         {
-            // Testeo que funcione al ataque UseStones
+            // Testeo que funcione el ataque Stones
             double expected = 1000;
             golem.UseStones(dwarf);
 

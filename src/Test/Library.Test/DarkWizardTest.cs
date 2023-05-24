@@ -17,6 +17,22 @@ namespace Library.Test
             darkWizard = new DarkWizard("Eladio"); // defense = 40
         }
         [Test]
+        public void GetTotalDamageTest()
+        {
+            // Verifico que la cuenta de totalDamage funcione
+            double expected = 245;
+
+            Assert.That(expected, Is.EqualTo(darkWizard.totalDamage));
+        }
+        [Test]
+        public void GetTotalDefenseTest()
+        {
+            // Verifico que la cuenta de totalDefense funcione
+            double expected = 40;
+
+            Assert.That(expected, Is.EqualTo(darkWizard.totalDefense));
+        }
+        [Test]
         public void UseDaggersTest() // damage = 70
         {
             // Testeo que funcione el ataque con Dagas
@@ -28,7 +44,7 @@ namespace Library.Test
         [Test]
         public void UseFireBallsTest()// damage 85
         {
-            // Testeo que funcionen las Bolas de Fuego
+            // Testeo que funcionen el ataque con las Bolas de Fuego
             double expected = 955;
             darkWizard.UseFireBalls(dwarf);
 
@@ -44,24 +60,9 @@ namespace Library.Test
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }   
         [Test]
-        public void GetTotalDamageTest()
-        {
-            // Verifico que la cuenta de totaldamage funcione
-            double expected = 245;
-
-            Assert.That(expected, Is.EqualTo(darkWizard.totalDamage));
-        }
-        [Test]
-        public void GetTotalDefenseTest()
-        {
-            // Verifico que la cuenta de totaldefense funcione
-            double expected = 40;
-
-            Assert.That(expected, Is.EqualTo(darkWizard.totalDefense));
-        }
-        [Test]
         public void UseAllStrengthTest()
         {
+            // Testeo que funcione el método UseAllStrength()
             double expected = 795;
             darkWizard.UseAllStrength(dwarf);
 
