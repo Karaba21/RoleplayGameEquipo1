@@ -14,8 +14,8 @@ namespace Library
 
         public override Stick item3 { get ;}
 
-        // double totalDamage = 60 + 0 + 0
-        // double totalDefense = 10 + 35 + 20
+        // double totalDamage = 0 + 55 + 55
+        // double totalDefense = 60 + 0 + 0
     
         public Troll(string name)
         {
@@ -38,7 +38,7 @@ namespace Library
             //public void AddItem(IItems item)
             //public void RemoveItem(IItems item)
         }
-        public void UseStick(Heroes hero) //item2
+        public void UseStick(Heroes hero) // item2 y item3
         {
             if (hero.totalDefense < this.item2.damage)
             {
