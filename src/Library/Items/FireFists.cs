@@ -5,13 +5,10 @@ namespace Library
 {
     public class FireFists : IAttackItem , IDefenseItem
     {
-        public double damage{get; set;}
-        public double defense {get; set;}
-
+        public double damage { get ; set ;}
+        public double defense { get ; set ;}
         public FireBalls fireBalls {get; set;}
-
         public Fists fists {get; set;}
-
         public FireFists()
         {
             this.damage= fireBalls.damage + fists.damage;

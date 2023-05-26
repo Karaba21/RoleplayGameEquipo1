@@ -7,30 +7,27 @@ namespace Library.Test
 {
     public class TrollTest
     {
-        //Esta clase tiene  test realizados.
+        // Esta clase tiene 4 tests realizados.
         private Dwarf dwarf;
         private Troll troll;
-
         [SetUp]
         public void SetUp()
         {
             dwarf = new Dwarf("Monty"); // defense = 40
-            troll = new Troll("Georgie"); // defense = 
+            troll = new Troll("Georgie"); // defense = 60
         }
-
         [Test]
         public void GetTotalDamageTest()
         {
-            // Verifico que la cuenta de totaldamage funcione
+            // Verifico que la cuenta de totalDamage funcione
             double expected = 110;
 
             Assert.That(expected, Is.EqualTo(troll.totalDamage));
         }
-
         [Test]
         public void GetTotalDefenseTest()
         {
-            // Verifico que la cuenta de totaldefense funcione
+            // Verifico que la cuenta de totalDefense funcione
             double expected = 60;
 
             Assert.That(expected, Is.EqualTo(troll.totalDefense));
@@ -44,7 +41,6 @@ namespace Library.Test
 
             Assert.That(expected, Is.EqualTo(dwarf.health));
         }
-        
         [Test]
         public void UseAllStrengthTest()
         {

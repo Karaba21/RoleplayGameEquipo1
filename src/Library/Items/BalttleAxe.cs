@@ -10,12 +10,7 @@ namespace Library
         public BattleAxe(string name)
         {
             this.damage = 65;
-            this.defense = 20;
-            
-
-            
-
-            
+            this.defense = 20;   
         }
     }
 }
