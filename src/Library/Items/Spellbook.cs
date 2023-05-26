@@ -27,13 +27,11 @@ namespace Library
             get
             {
                 double totalSpellDamage = 0;
-                double spellBonus = 0;
                 foreach (Spell spell in this.spells)
                 {
                     totalSpellDamage = totalSpellDamage + spell.damage;
-                    spellBonus = spellBonus + 15;
                 }
-                return totalSpellDamage + spellBonus;
+                return totalSpellDamage + this.spellsDamageBonus;
             }
             set
             {}
@@ -43,26 +41,22 @@ namespace Library
             get
             {
                 double totalSpellDefense = 0;
-                double spellsBonus = 0;
                 foreach (Spell spell in this.spells)
                 {
                     totalSpellDefense = totalSpellDefense + spell.defense;
-                    spellsBonus = spellsBonus + 5;
                 }
-                return totalSpellDefense + spellsBonus;
+                return totalSpellDefense + this.spellsDefenseBonus;
             }
             set
             {}
         }
         public SpellBook()
-        {
-            List<Spell> spells = new List<Spell>();
-            
-            this.spells = spells;
+        {            
+            this.spells = new List<Spell>();
         }
-        public Spell AddSpell(string spellName, double damage, double defemse)
+        public Spell AddSpell(string spellName, double damage, double defense)
         {
-            Spell spell = new Spell(spellName, damage, defemse);
+            Spell spell = new Spell(spellName, damage, defense);
             this.spells.Add(spell);
             return spell;
         }
