@@ -1,3 +1,8 @@
+/*
+
+NO ESTA EN USO
+
+*/
 namespace Library
 {
     public interface ICharacter
@@ -11,4 +16,3 @@ namespace Library
         void UseAllStrength(ICharacter character);
     }
 }
-// no esta en uso

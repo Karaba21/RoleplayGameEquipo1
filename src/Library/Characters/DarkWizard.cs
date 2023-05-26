@@ -7,7 +7,7 @@ namespace Library
     {
         // string name
         // double health
-        // List<Items> items
+        // List<IItems> items
         // double VP
         public override Daggers item1 { get ;}
         public override FireBalls item2 { get ;}
@@ -34,8 +34,8 @@ namespace Library
             this.items.Add(this.item3); 
         }
         // public void UseAllStrength(Heroes hero)
-        // public void AddItem(Items item)
-        // public void RemoveItem(Items item)
+        // public void AddItem(IItems item)
+        // public void RemoveItem(IItems item)
         public void UseDaggers(Heroes hero) // item1
         {
             if (hero.totalDefense < this.item1.damage)

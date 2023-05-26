@@ -7,7 +7,7 @@ namespace Library
     {
         // string name
         // double health
-        // List<Items> items
+        // List<IItems> items
         // double VP
         // double VPposEncounter
         public override Crossbow item1 { get ;}
@@ -37,8 +37,8 @@ namespace Library
         // public void Heal()
         // public void RestoreHealth()
         // public void UseAllStrength(Enemies enemy)
-        // public void AddItem(Items item)
-        // public void RemoveItem(Items item)
+        // public void AddItem(IItems item)
+        // public void RemoveItem(IItems item)
         public void UseCrossbow(Enemies enemy) // item1
         {
             if (enemy.totalDefense < this.item1.damage)
