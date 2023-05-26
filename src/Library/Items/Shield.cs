@@ -1,7 +1,9 @@
 namespace Library
 {
-    public class Shield : Items
+    public class Shield : IAttackItem, IDefenseItem
     {
+        public double damage { get ; set ;}
+        public double defense { get ; set ;}
         public Shield()
         {
             this.damage = 0;

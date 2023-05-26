@@ -14,7 +14,7 @@ namespace Library.Test
         public void SetUp()
         {
             dwarf = new Dwarf("Andy"); // defense = 40
-            bomber= new Bomber("KongTheBomber"); // defemse = 65
+            bomber= new Bomber("KongTheBomber"); // defense = 65
         }
         [Test]
         public void GetTotalDamageTest()

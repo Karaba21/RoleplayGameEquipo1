@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Library
 {
-    public class SpellBook : Items
+    public class SpellBook : IAttackItem, IDefenseItem
     {
         public List<Spell> spells { get ; set ;}
         public double spellsDamageBonus
@@ -22,7 +22,7 @@ namespace Library
                 return spellsDefenseBonus;
             }
         }
-        public override double damage
+        public double damage
         {
             get
             {
@@ -35,8 +35,10 @@ namespace Library
                 }
                 return totalSpellDamage + spellBonus;
             }
+            set
+            {}
         }
-        public override double defense
+        public double defense
         {
             get
             {
@@ -49,6 +51,8 @@ namespace Library
                 }
                 return totalSpellDefense + spellsBonus;
             }
+            set
+            {}
         }
         public SpellBook()
         {

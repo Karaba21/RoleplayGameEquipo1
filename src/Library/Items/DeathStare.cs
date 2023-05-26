@@ -1,7 +1,9 @@
 namespace Library
 {
-    public class DeathStare : Items
+    public class DeathStare : IAttackItem, IDefenseItem
     {
+        public double damage { get ; set ;}
+        public double defense { get ; set ;}
         public DeathStare()
         {
             this.damage = 105;

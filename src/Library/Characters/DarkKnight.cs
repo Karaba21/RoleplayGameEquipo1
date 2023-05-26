@@ -43,13 +43,6 @@ namespace Library
                 hero.health = hero.health + hero.totalDefense - this.item1.damage;
             }
         }
-        public void UseArmor(Heroes hero) // item2
-        {
-            if (hero.totalDefense < this.item2.damage)
-            {
-                hero.health = hero.health + hero.totalDefense - this.item2.damage;
-            }
-        }
         public void UseFlail(Heroes hero) // item3
         {
             if (hero.totalDefense < this.item3.damage)

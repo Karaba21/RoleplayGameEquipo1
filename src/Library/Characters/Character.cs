@@ -7,19 +7,22 @@ namespace Library
     {
         public string name { get ; set ;}
         public double health { get ; set ;}
-        public List<Items> items = new List<Items>();
-        public abstract Items item1 { get ;}
-        public abstract Items item2 { get ;}
-        public abstract Items item3 { get ;}
+        public List<IItems> items = new List<IItems>();
+        public abstract IItems item1 { get ;}
+        public abstract IItems item2 { get ;}
+        public abstract IItems item3 { get ;}
         public double VP { get ; set ;}
         public double totalDamage
         {
             get
             {
                 double totalDamage = 0;
-                foreach (Items item in this.items)
+                foreach (IItems item in this.items)
                 {
-                    totalDamage = totalDamage + item.damage;
+                    if (item is IAttackItem)
+                    {
+                        totalDamage = totalDamage + ((IAttackItem) item).damage;
+                    }
                 }
                 return totalDamage;
             }
@@ -29,20 +32,23 @@ namespace Library
             get
             {
                 double totalDefense = 0;
-                foreach (Items item in this.items)
+                foreach (IItems item in this.items)
                 {
-                    totalDefense = totalDefense + item.defense;
+                    if (item is IDefenseItem)
+                    {
+                        totalDefense = totalDefense + ((IDefenseItem) item).defense;
+                    }
                 }
                 return totalDefense;
             }
         }
-        public void AddItem(Items item)
+        public void AddItem(IItems item)
         {
             this.items.Add(item);
         }
-        public void RemoveItem(Items item)
+        public void RemoveItem(IItems item)
         {
-            if (this.items.Contains(item) && item != this.item1 && item != this.item2 && item != this.item3)
+            if (item != this.item1 && item != this.item2 && item != this.item3)
             {
                 this.items.Remove(item);
             }

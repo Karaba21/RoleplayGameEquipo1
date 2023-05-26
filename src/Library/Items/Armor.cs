@@ -1,10 +1,10 @@
 namespace Library
 {
-    public class Armor : Items
+    public class Armor : IDefenseItem
     {
+        public double defense { get ; set ;}
         public Armor()
         {
-            this.damage = 0;
             this.defense = 35;
         }
     }

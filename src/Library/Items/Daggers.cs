@@ -1,7 +1,9 @@
 namespace Library
 {
-    public class Daggers : Items
+    public class Daggers : IAttackItem, IDefenseItem
     {
+        public double damage { get ; set ;}
+        public double defense { get ; set ;}
         public Daggers()
         {
             this.damage = 70;
