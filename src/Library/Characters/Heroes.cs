@@ -2,7 +2,7 @@ namespace Library
 {
     public abstract class Heroes : Character
     {
-        public double VPposEncounter { get ; set ;}
+        public double VPpreEncounter { get ; set ;}
         public void Heal(double medicine)
         {
             this.health = this.health + medicine;
@@ -25,7 +25,7 @@ namespace Library
                 }
                 if (enemy.health <= 0)
                 {
-                    this.VPposEncounter = this.VPposEncounter + enemy.VP;
+                    this.VP = this.VP + enemy.VP;
                 }
             }
         }

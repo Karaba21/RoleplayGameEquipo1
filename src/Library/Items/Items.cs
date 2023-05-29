@@ -7,6 +7,7 @@ NO ESTA EN USO
 
 */
 
+/*
 namespace Library
 {
     public class Items
@@ -15,3 +16,4 @@ namespace Library
         public virtual double defense { get ; set ;}
     }
 }
+*/

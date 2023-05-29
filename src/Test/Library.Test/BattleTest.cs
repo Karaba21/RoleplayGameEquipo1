@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Library.Test
 {
-    public class EncounterTest
+    public class BattleTest
     {
         // En esta clase hay 7 tests.
         private Wizard wizard1;
@@ -58,7 +58,7 @@ namespace Library.Test
             // El método DoEncounter devolvería cuantas rondas duró
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
             bool success = (expectedRounds == rounds) && (expectedVictors == victors);
             
             Assert.That(expected, Is.EqualTo(success));
@@ -75,7 +75,7 @@ namespace Library.Test
 
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
             bool success = (expectedRounds == rounds) && (expectedVictors == victors);
             
             Assert.That(expected, Is.EqualTo(success));
@@ -92,7 +92,7 @@ namespace Library.Test
 
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
             bool success = (expectedRounds == rounds) && (expectedVictors == victors);
             
             Assert.That(expected, Is.EqualTo(success));
@@ -107,7 +107,7 @@ namespace Library.Test
                                                         // vp=5   vp=5       vp=4       vp=3   vp=4
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
 
             bool success = wizard1.VP == 21 && dwarf1.VP == 0 && elf.VP == 0;
             Assert.That(expected, Is.EqualTo(success));
@@ -122,7 +122,7 @@ namespace Library.Test
                                                         // vp=5   vp=5       vp=4       vp=3   vp=4
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
 
             double result = wizard1.health;
             Assert.That(expected, Is.EqualTo(result));
@@ -136,7 +136,7 @@ namespace Library.Test
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
 
             double result = elf.health;
             Assert.That(expected, Is.EqualTo(result));
@@ -150,7 +150,7 @@ namespace Library.Test
             List<Enemies> enemies = new List<Enemies> {bomber, darkKnight, darkWizard, golem, gorgon};
             int rounds;
             string victors;
-            Encounter.DoEncounter(heroes, enemies, out rounds, out victors);
+            Battle.DoEncounter(heroes, enemies, out rounds, out victors);
 
             double result = dwarf1.health;
             Assert.That(expected, Is.EqualTo(result));

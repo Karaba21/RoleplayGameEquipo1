@@ -6,7 +6,8 @@ namespace Library
     {
         static void Main(string[] args)
         {
-            
+            Armor item = new Armor();
+            Console.WriteLine(item);
         }
     }
 }
