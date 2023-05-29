@@ -10,7 +10,7 @@ namespace Library
         public double defense { get ; set ;}
         public Fists()
         {
-            this.name="Fist";
+            this.name = "Fist";
             this.damage = 60;
             this.defense = 35;
         }

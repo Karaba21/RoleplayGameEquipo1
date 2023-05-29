@@ -12,9 +12,9 @@ namespace Library
         public Fists fists {get; set;}
         public FireFists()
         {
-            this.name="Fire Fists";
-            this.damage= fireBalls.damage + fists.damage;
-            this.defense= fireBalls.defense + fists.defense;
+            this.name = "Fire Fists";
+            this.damage = fireBalls.damage + fists.damage;
+            this.defense = fireBalls.defense + fists.defense;
         }
     }
 }

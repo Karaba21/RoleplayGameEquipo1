@@ -5,12 +5,12 @@ namespace Library
 {
     public class MagicClub : IAttackItem, IDefenseItem
     {
-        public string name {get ; set;}
+        public string name { get ; set ;}
         public double damage { get ; set ;}
         public double defense { get ; set ;}
         public MagicClub()
         {
-            this.name="Magic club";
+            this.name = "Magic Club";
             this.damage = 90;
             this.defense = 5;
         }

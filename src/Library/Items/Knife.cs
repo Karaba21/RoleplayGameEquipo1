@@ -5,11 +5,11 @@ namespace Library
 {
     public class Knife : IAttackItem
     {
-        public string name {get ; set;}
+        public string name { get ; set ;}
         public double damage { get ; set ;}
         public Knife()
         {
-            this.name="Knife";
+            this.name = "Knife";
             this.damage = 70;
         }
     }

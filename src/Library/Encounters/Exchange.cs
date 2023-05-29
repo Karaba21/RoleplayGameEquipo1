@@ -17,6 +17,7 @@ namespace Library
         }
         public void DoEncounter()
         {
+            this.reporter.ReportExchangeSetup(this.giver, this.receiver);
             foreach (IItems item in this.items)
             {
                 this.giver.RemoveItem(item);
