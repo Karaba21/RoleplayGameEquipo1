@@ -10,11 +10,12 @@ namespace Library
         public List<IItems> items { get ; set ;}
         public Exchange(Heroes giver, Heroes receiver, List<IItems> items)
         {
+            this.reporter = new ConsoleReporter();
             this.giver = giver;
             this.receiver = receiver;
             this.items = items;
         }
-        public override void DoEncounter()
+        public void DoEncounter()
         {
             foreach (IItems item in this.items)
             {

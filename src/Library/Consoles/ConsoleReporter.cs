@@ -18,7 +18,7 @@ namespace Library
         public void ReportExchange(Character giver, Character receiver, IItems item)
         {
             Console.WriteLine($"{giver.name} and {receiver.name} are exchanging items");
-            Console.WriteLine($"{giver.name} gave {receiver.name} their {item}");
+            Console.WriteLine($"{giver.name} gave {receiver.name} their {item.name}");
         }
     }
 }

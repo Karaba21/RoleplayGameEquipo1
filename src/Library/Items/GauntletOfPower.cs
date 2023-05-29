@@ -5,6 +5,7 @@ namespace Library
 {
     public class GauntletOfPower : IAttackItem, IDefenseItem
     {
+        public string name { get ; set ;}
         public List<Gem> gems { get ; set ;}
         public double damage
         {
@@ -36,6 +37,7 @@ namespace Library
         }
         public GauntletOfPower()
         {
+            this.name = "Gauntlet of Power";
             this.gems = new List<Gem>();
         }
         public Gem AddGem(double damage, double defense)

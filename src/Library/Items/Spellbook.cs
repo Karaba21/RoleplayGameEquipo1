@@ -5,6 +5,7 @@ namespace Library
 {
     public class SpellBook : IAttackItem, IDefenseItem
     {
+        public string name { get ; set ;}
         public List<Spell> spells { get ; set ;}
         public double spellsDamageBonus
         {
@@ -52,6 +53,7 @@ namespace Library
         }
         public SpellBook()
         {            
+            this.name = "Spell Book";
             this.spells = new List<Spell>();
         }
         public Spell AddSpell(string spellName, double damage, double defense)
